@@ -29,7 +29,7 @@ function findPara(param){
 
 let appName = findPara("app");//需要编译的应用 pages_ailive pages_zbhk
 appName = appName == '' ? 'pages_zbhk' : appName;
-
+console.log(appName)
 module.exports = {
     entry: './src/Page/'+appName+'/index.js',
     output: {
