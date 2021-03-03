@@ -1,0 +1,94 @@
+#seek_scene {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 1;
+}
+
+/*右上角图标+提示*/
+#seek_scene .seek_icon{
+    position: absolute;
+    top: 50px;
+    right: 100px;
+}
+#seek_scene .seek_icon .icon {
+    float: left;
+    background: url("../../images/pages_ailive/sch_seek_icon.png") no-repeat;
+    width: 42px;
+    height: 42px;
+}
+#seek_scene .seek_icon .tips{
+    float: left;
+    font-family: "Microsoft YaHei";
+    font-size: 32px;
+    color: rgb(255, 255, 255);
+    height: 42px;
+    line-height: 42px;
+    margin-left: 20px;
+}
+
+/*播控条样式*/
+#seek_scene .seek_bottom_show{
+    background: url("../../images/pages_ailive/shadow_bg2.png") repeat-x;
+    width: 1920px;
+    height: 371px;
+    position: absolute;
+    bottom: 0
+}
+#seek_scene .seek_info{
+    position: absolute;
+    left: 174px;
+    bottom: 60px;
+    color: #ffffff;
+}
+#seek_scene .seek_info .cate_name{
+    font-size: 40px;
+    font-weight: bold;
+}
+#seek_scene .seek_info .program_name{
+    margin: 10px 0 0 52px;
+    font-size: 32px;
+    font-weight: bold;
+}
+#seek_scene .seek_info .progress{
+    margin-left: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    width: 1572px;
+    height: 1px;
+}
+#seek_scene .seek_info .progress_mid{
+    float: left;
+    background: #fff;
+    margin-top: -1px;
+    height: 3px;
+}
+#seek_scene .seek_info .progress_cur_point{
+    float: left;
+    background-image: url("../../images/pages_ailive/progress_point.png");
+    height: 25px;
+    width: 25px;
+    margin: -12px 0 0 -25px;
+}
+
+#seek_scene .seek_info .program_time{
+    margin: 20px 0 30px 0;
+    height: 44px;
+}
+#seek_scene .seek_info .program_time p{
+    float: left;
+    height: 41px;
+    line-height: 41px;
+    font-size: 30px;
+}
+#seek_scene .seek_info .program_time .icon{
+    width: 41px;
+    height: 41px;
+    float: left;
+    margin-right: 16px;
+    background-image: url("../../images/pages_ailive/play_icon.png");
+}
+#seek_scene .seek_info .program_time .end_time{
+    opacity: 0.5;
+    font-weight: lighter;
+}

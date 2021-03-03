@@ -1,0 +1,236 @@
+/*预约节目列表*/
+#book_list_view #book_program_list {
+    width: 567px;
+    position: absolute;
+    top: 98px;
+    left: 181px;
+}
+#book_list_view #book_program_list .book_item {
+    float: left;
+    width: 400px;
+    height: 66px;
+    padding: 10px 0 0px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    color: #ffffff;
+    border: 3px solid transparent;
+}
+#book_program_list .book_item .playing_icon {
+    position: absolute;
+    z-index: 999;
+    top: 15px;
+    left: 18px;
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -142px -621px;
+    width: 22px;
+    height: 17px;
+}
+#book_program_list .book_item .book_icon {
+    position: absolute;
+    z-index: 999;
+    top: 14px;
+    left: 20px;
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -54px -621px;
+    width: 22px;
+    height: 22px;
+}
+#book_program_list .book_item .lookback_icon {
+    position: absolute;
+    z-index: 999;
+    top: 14px;
+    left: 20px;
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -98px -621px;
+    width: 22px;
+    height: 22px;
+}
+
+#book_program_list .play{
+    background-image: url("../../images/pages_zbhk/play-item-bg.png?__sprite");
+    -moz-background-size: 100% 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+#book_program_list .program_info p{
+    height: 24px;
+    font-size: 24px;
+    line-height: 24px;
+    z-index: 3;
+}
+#book_program_list .book_item .program_info.cancel_book p{
+    color: #d0d0d0;
+}
+#book_program_list .program_info .status_tips{
+    position: absolute;
+    left: 40px;
+    width: 94px;
+    text-align: center;
+}
+#book_program_list .program_info .start_time{
+    position: absolute;
+    left: 140px;
+    width: 65px;
+}
+#book_program_list .program_info .program_name{
+    position: absolute;
+    left: 208px;
+    width: 195px;
+    overflow: hidden;
+}
+#book_program_list .program_date {
+    position: absolute;
+    left: 52px;
+    top: 40px;
+    z-index: 3;
+    font-family:SourceHanSansCN-Normal;
+    height: 20px;
+    font-size: 20px;
+    line-height: 20px;
+    opacity: 0.5;
+}
+#book_program_list .channel_info{
+    position: absolute;
+    left: 140px;
+    top: 40px;
+    z-index: 3;
+    font-family:SourceHanSansCN-Normal;
+    opacity: 0.5;
+}
+#book_program_list .channel_info span{
+    float: left;
+    height: 20px;
+    font-size: 20px;
+    line-height: 20px;
+}
+#book_program_list .with_num .channel_info .channel_no{
+    margin-right: 12px;
+}
+#book_list_view #book_program_list .book_item.focus{
+    z-index: 2;
+    border: 3px solid white;
+    background-color: #0093DF;
+}
+#book_program_list .book_item.playing .program_info{
+    color: #56ff07;
+}
+#book_program_list .book_item.focus .program_info.cancel_book p, #book_program_list .book_item.focus .program_date, #book_program_list .book_item.focus .channel_info{
+    opacity: 1.0;
+    color: #ffffff;
+}
+#book_program_list .book_item.focus .playing_icon {
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -120px -621px;
+}
+#book_program_list .book_item.focus .book_icon {
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -32px -621px;
+}
+#book_program_list .book_item.focus .lookback_icon {
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -76px -621px;
+}
+#book_program_list .book_operation_tip{
+    position: relative;
+    float: left;
+    background-image: url(../../images/pages_zbhk/book-operation-bg.png);
+    width: 140px;
+    height: 72px;
+    line-height: 72px;
+    font-size: 22px;
+    margin-top: 6px;
+    text-align: center;
+}
+/*没有预约数据的样式*/
+#no_book_tip{
+    position: absolute;
+    left: 312px;
+    top: 325px;
+    line-height: 26px;
+    height: 26px;
+    font-size: 26px;
+}
+
+/* 预约成功、取消预约提示 */
+#book_operation_tip {
+    position: absolute;
+    top: 230px;
+    background-image: url("../../images/pages_zbhk/book_tip_bg.png");
+    background-size: cover;
+    width: 1280px;
+    height: 235px;
+    text-align: center;
+}
+#book_operation_tip #book_program {
+    margin-top: 40px;
+    color: #ffffff;
+    height: 36px;
+    line-height: 36px;
+    font-size: 36px;
+}
+#book_operation_tip .book_icon{
+    position: absolute;
+    left: 504px;
+    top: 104px;
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: 0px -621px;
+    width: 32px;
+    height: 33px;
+}
+#book_operation_tip #operation_tip{
+    position: absolute;
+    top: 94px;
+    left: 547px;
+    color: #56ff07;
+    font-size: 36px;
+}
+#book_operation_tip #success_tip{
+    position: absolute;
+    top: 164px;
+    font-size: 26px;
+    color: #9c9c9c;
+    text-align: center;
+    width: 100%;
+}
+/* 预约到期提示 */
+#book_tip_scene{
+    position: absolute;
+    top: 466px;
+    background-image: url("../../images/pages_zbhk/book_tip_bg.png");
+    background-size: cover;
+    width: 1280px;
+    height: 254px;
+    text-align: center;
+    color: white;
+}
+#book_tip_scene .tip_info{
+    margin-top: 40px;
+    color: #ffffff;
+    font-size: 24px;
+}
+#book_tip_scene .book_program{
+    margin-top: 10px;
+    color: #4fff0b;
+    font-size: 30px;
+}
+#book_tip_scene .operation_button {
+    height: 48px;
+    width: 100%;
+    margin-top: 20px;
+}
+#book_tip_scene .operation_button button{
+    width: 210px;
+    height: 48px;
+    font-size: 24px;
+    line-height: 48px;
+    background: #909090;
+    color: white;
+    text-align: center;
+}
+#book_tip_scene .operation_button #book_tip_time_id{
+    margin-left: 60px;
+}
+#book_tip_scene .operation_button button.focus{
+    background: #0093E0
+}

@@ -1,0 +1,101 @@
+#seek_scene{
+    position: absolute;
+    width: 1280px;
+    height: 720px;
+}
+#seek_scene .top_bg{
+    background-image: url(../../images/pages_zbhk/seek_top_bg.png?__sprite);
+    width: 100%;
+    height: 200px;
+    background-position-y: -39px;
+}
+#seek_scene .top_bg .channel_no{
+    position: fixed;
+    top: 50px;
+    left: 35px;
+    color: #8af506;
+    font-size: 30px;
+}
+#seek_scene .top_bg .channel_name{
+    position: fixed;
+    top: 50px;
+    left: 100px;
+    color: #8af506;
+    font-size: 30px;
+}
+#seek_scene .top_bg .program_name{
+    position: fixed;
+    top: 90px;
+    left: 100px;
+    color: #ffffff;
+    font-size: 1.5em;
+}
+#seek_scene .top_bg .current_time{
+    position: absolute;
+    top: 18px;
+    right: 48px;
+    color: #ffffff;
+    font-size: 22px;
+}
+#seek_scene .bottom_bg{
+    background-image: url(../../images/pages_zbhk/seek_bottom_bg.png?__sprite);
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    bottom: 0px;
+}
+#seek_scene .bottom_bg #show_icon{
+    position: absolute;
+    left: 67px;
+    bottom: 56px;
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    width: 67px;
+    height: 67px;
+}
+#seek_scene .bottom_bg .progress{
+    clear: both;
+    height: 6px;
+    background: rgba(26, 137, 197, 0.61);
+    overflow: visible;
+    border-radius: 2px;
+    width: 1028px;
+    margin: 108px 0 0 188px;
+}
+#seek_scene .bottom_bg .progress .progress_mid{
+    height: 100%;
+    width: 40%;
+    background-color: rgba(255, 255, 255, 0.86);
+    border-radius: 2px;
+}
+#seek_scene .bottom_bg .progress .progress_mid .progress_cur_point{
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -749px -487px;
+    width: 31px;
+    height: 31px;
+    float: left;
+    margin-top: -13px;
+    float: right;;
+}
+#seek_scene .bottom_bg .show_time{
+    top: 120px;
+    position: absolute;
+    right: 60px;
+    font-size: 23px;
+    color: #6b6b6b;
+}
+#seek_scene .bottom_bg .show_time span{
+    float: left;
+}
+#seek_scene .bottom_bg #show_icon.play, #live_seek_scene .bottom_bg #live_show_icon.play{
+    background-position: -595px -418px;
+}
+#seek_scene .bottom_bg #show_icon.pause, #live_seek_scene .bottom_bg #live_show_icon.pause{
+    background-position: -664px -418px;
+
+}
+#seek_scene .bottom_bg #show_icon.forward, #live_seek_scene .bottom_bg #live_show_icon.forward{
+    background-position: -784px -142px;
+}
+#seek_scene .bottom_bg #show_icon.backward, #live_seek_scene .bottom_bg #live_show_icon.backward {
+    background-position: -751px -324px;
+}

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta charset="UTF-8">
+    <title>直播回看</title>
+    <script src="./config.js" type="text/javascript"></script>
+</head>
+
+<body class="clearfloat">
+<!--BEGIN 播放 Loading组件-->
+<div id="loading_component" style="display: none;">
+    <div class="loading"><div class="loader"></div></div>
+</div>
+<!--END 播放 Loading组件-->
+
+<!--BEGIN 页面 Loading组件-->
+<div id="page_loading_component" class="loading" style="display: none;">
+    <div id="page_loading_component_dot_id_0" class="loading_dot" style="display: none;"></div>
+    <div id="page_loading_component_dot_id_1" class="loading_dot" style="display: none;"></div>
+    <div id="page_loading_component_dot_id_2" class="loading_dot" style="display: none;"></div>
+    <div id="page_loading_component_dot_id_3" class="loading_dot" style="display: none;"></div>
+    <div id="page_loading_component_dot_id_4" class="loading_dot" style="display: none;"></div>
+    <div id="page_loading_component_dot_id_5" class="loading_dot" style="display: none;"></div>
+</div>
+<!--END 页面 Loading组件-->
+
+<!--BEGIN Loading页面-->
+<div id="loading_scene" style="display: none;"></div>
+<!--END Loading页面-->
+
+<!--BEGIN 分类菜单页面-->
+<div id="category_play_menu_scene" class="play-menu-common-style category-play-menu" style="display: none;">
+    <div style="width: 100%;height: 98px;">
+        <div style="width: 284px;height: 100%;padding-top: 37px;">
+            <span style="font-size: 32px;font-family: 'Microsoft YaHei';color:#FFFFFF;margin-left: 83px;">分类</span>
+            <span style="margin-left: 20px;color:#B9B9BA;font-size: 24px;font-family: 'Microsoft YaHei Regular';">频道</span>
+        </div>
+    </div>
+    <div id="category-play-menu-list-div-id">
+        <div id="c_p_p_0" class="category-play-menu-list">
+            <div id=category-play-menu-category-{{index}}  repeat="item in showList" >
+                <div class="item_css">{{item.Name}}</div>
+            </div>
+        </div>
+        <div id="c_p_p_1" class="category-play-menu-list">
+            <div id=category-play-menu-channel-{{index}}  repeat="item in showList" style="text-align: left;" class="pdp-style">
+                <div id=category-play-menu-channel-img-{{index}} class="collection-icon collection-1 collection-icon-right" style="visibility: hidden;"></div>
+                <p class="channel-category-channel-num">{{item.ChannelNo}}</p>
+                <div class="category-play-menu-list-icon">
+                    <img align="center" class="category-play-menu-list-img">
+                </div>
+                <div id=category-play-menu-channel-{{index}}_name style="display: block;overflow: hidden;text-overflow:ellipsis;padding-left: 12px;height: 100%;">{{item.ChannelName}}</div>
+            </div>
+        </div>
+        <!--BEGIN 预约节目单-->
+        <div id="book_list_view" style="display: none;">
+            <div id="book_program_list" class="book_list">
+                <div repeat="item in showList">
+                    <div class="book_item" id="book_item_{{index}}">
+                        <div id="status_icon_{{index}}" class=""></div>
+                        <div class="program_info" id="program_info_{{index}}">
+                            <p class="status_tips" id="status_tips_{{index}}">{{item.tips}}</p>
+                            <p class="start_time">{{item.startTimeFmt}}</p>
+                            <p class="program_name">{{item.programName}}</p>
+                        </div>
+                        <div class="program_date">{{item.dateShow}}</div>
+                        <div class="channel_info">
+                            <span class="channel_no">{{item.channelNo}}</span>
+                            <span class="channel_name">{{item.channelName}}</span>
+                        </div>
+                    </div>
+                    <div class="book_operation_tip" id="operation_tip_{{index}}" style="display: none;">预约已取消</div>
+                </div>
+            </div>
+            <div id="no_book_tip" style="display: none;">请您先预约节目</div>
+        </div>
+        <!--END 预约节目单-->
+    </div>
+    <div id="category_play_menu_arrow_right_id" class="category_play_menu_arrow_right">向右收看往期节目</div>
+    <div id="category_menu_arrow_two_right_id" class="category_play_menu_arrow_two_right category_play_menu_arrow_right"></div>
+</div>
+<!--END 分类菜单页面-->
+
+<div class="category-menu-ok-style" id="star-button-tips" style="display: none;">按"OK"键查看节目菜单</div>
+
+<!--BEGIN 全屏播放页-->
+<div id="player_scene" style="display: none;"></div>
+<!--END 全屏播放页-->
+
+<!--BEGIN 屏显栏-->
+<div id="play_program_tip_bar_id" style="display: none;">
+    <div id="play_program_tip_program_name_id" style="height: 42px;width: 100%;color:#FFFEFE;line-height: 40px;background-color: #0093DF;text-align: center;"></div>
+    <div class="play_program_tip_program_content_style">
+        <div id="play_program_tip_bar_middle_id"  style="height: 62px;width: 100%;padding-top: 5px;"></div>
+        <div style="width: 100%;height: 6px;background-color: #454551;">
+            <div id="play_program_tip_bar_schedule_id" style="width: 0%;height: 100%;background-color: #FFFFFF;"></div>
+        </div>
+    </div>
+</div>
+<!--END 屏显栏-->
+
+<!--BEGIN 频道菜单页面-->
+<div id="channel_play_menu_scene" class="channel-play-menu"  style="display: none;">
+    <div style="width: 100%;height: 98px;">
+        <div style="width: 100%;height: 100%;padding-top: 37px;">
+            <div id="channel_play_menu_part_channel_name" style="display: none;"></div>
+            <span id="channel_play_menu_part_name_1" style="margin-left: 83px;color:#B9B9BA;font-size: 24px;font-family: 'Microsoft YaHei Regular';">分类</span>
+            <span id="channel_play_menu_part_name_2" style="font-size: 32px;font-family: 'Microsoft YaHei';color:#FFFFFF;margin-left: 20px;">频道</span>
+            <span id="select-category-name-show-id" style="margin-left: 440px;color:#B9B9BA;font-size: 20px;font-family: 'Microsoft YaHei Regular';"></span>
+        </div>
+    </div>
+    <div style="height: 622px;width: 100%;">
+        <div style="float:left;width: 35px;height: 100%;">
+            <div id="channel_play_menu_arrow_left_id"  style=""></div>
+        </div>
+        <!--BEGIN 频道-->
+        <div class="channel-play-menu-list" id="p_d_p_0">
+            <div id=p_d_p_0_0_{{index}} class="pdp-style"  repeat="item in showList" style="text-align: left;">
+                <div style="height: 100%;text-align: left;margin-left: 10px;">
+                    <div id=channel-play-menu-list-collection-icon-{{index}} style="margin-left: 0px;" class="
+                    collection-icon-right category-collection-ico-style-1 menu-channel-collection menu-channel-collection-hidden"></div>
+                    <p class="schedule-menu-channel-num">{{item.ChannelNo}}</p>
+                    <div class="channel-play-menu-list-icon">
+                        <img align="center" class="channel-play-menu-list-img">
+                    </div>
+                    <p id=p_d_p_0_0_{{index}}_name class="name" style="padding-left: 10px; width: 157px;overflow: hidden;text-overflow:ellipsis;white-space:nowrap;display: block;">{{item.ChannelName}}</p>
+                </div>
+            </div>
+        </div>
+        <!--END 频道-->
+
+        <!--BEGIN 日期-->
+        <div class="channel-play-menu-list" id="p_d_p_1">
+            <div id="p_d_p_1_c" style=""><div>收藏频道</div></div>
+            <div id=p_d_p_1_0_{{index}} repeat="item in showList">
+                <div>{{item.showName}}</div>
+            </div>
+        </div>
+        <!--END 日期-->
+
+        <div class="channel-play-menu-list" id="p_d_p_2">
+            <div repeat="item in showList">
+                <div id=p_d_p_2_0_{{index}} style="text-align: left;" class="pdp-style">
+                    <div id=p_d_p_2_0_{{index}}_name class="program-style" style="display: block;float:left;">{{item.timeName}} {{item.showName}}</div>
+                    <div id=p_d_p_2_0_{{index}}_type class="set-all-right program-label-style-2" style="display: none;">{{item.programType}}</div>
+                    <div class="book-icon"></div>
+                </div>
+                <div class="book_operation_tip" id="book_operation_tip_{{index}}">节目预约成功</div>
+             </div>
+        </div>
+    </div>
+</div>
+<!--END 频道菜单页面-->
+
+<!--BEGIN 封套页面-->
+<div id="cover_scene"  style="display: none;">
+    <div id="cover_scene_div">
+        <div id="lookback_button" class="button">
+            <div class="to_lookback"></div>
+            <div class="tips">回看</div>
+        </div>
+        <div id="category_list" class="category">
+            <p class="category_info">频道</p>
+            <div class="category_name" id=category_item_{{index}} repeat="item in categoryList">
+                {{item.Name}}
+            </div>
+            <div class="category_page_arrow" id="category_page_arrow">
+                <p class="up_arrow hide"></p>
+                <p class="down_arrow hide"></p>
+            </div>
+        </div>
+        <div class="channel">
+            <div id="channel_list" class="channel_list">
+                <div class="channel_item" id=channel_item_{{index}} repeat="item in channelList">
+                    <p id=collection_delete_{{index}} class="delete_icon" style="display: none;"></p>
+                    <p id=channel_collection_{{index}} class="collection_icon" style="display: none;"></p>
+                    <span class="cover_scene_channel_no" id="channel_no_{{index}}">{{item.ChannelNo}}</span>
+                    <span class="channel_name">{{item.ChannelName}}</span>
+                </div>
+            </div>
+            <div class="channel_page_info" id="channel_page_info"></div>
+            <div class="channel_page_arrow" id="channel_page_arrow">
+                <p class="up_arrow hide"></p>
+                <p class="down_arrow hide"></p>
+            </div>
+        </div>
+        <div class="buttons edit" id="collection_button_0"></div>
+        <div class="collection_operation" id="collection_operation">
+            <div class="buttons clear" id="collection_button_1"></div>
+            <div class="buttons finish" id="collection_button_2"></div>
+        </div>
+        <div id="cover_copy_num" class="copy_num"></div>
+    </div>
+</div>
+<!--END 封套页面-->
+
+<!--BEGIN 二次确认弹出层-->
+<div id="second_confirm_tip" class="second_confirm_tip" style="display: none;">
+    <div class="tip">
+        <p class="icon clear_icon icon-base icon-confirm_clear_icon"></p>
+        <p class="tip_info">清空当前内容</p>
+    </div>
+    <div class="button">
+        <div class="common_button confirm_button" id="confirm_button_0">
+            <p class="icon confirm_icon icon-base icon-cover_finish_icon"></p>
+            <p class="tip_info">确认</p>
+        </div>
+        <div class="common_button cancel_button" id="confirm_button_1">
+            <p class="icon cancel_icon icon-base icon-cover_cancel_icon"></p>
+            <p class="tip_info">取消</p>
+        </div>
+    </div>
+</div>
+<!--END 二次确认弹出层-->
+
+<!--BEGIN 封套九宫格页面-->
+<div id="cover_image_scene"  style="display: none;">
+    <div id="cover_image_scene_div">
+        <div id="image_lookback_button" class="button">
+            <div class="to_lookback"></div>
+            <div class="tips">回看</div>
+        </div>
+        <div id="image_category_list" class="category">
+            <p class="category_info">频道</p>
+            <div class="category_name" id=image_category_item_{{index}} repeat="item in categoryList">
+                {{item.Name}}
+            </div>
+            <div class="category_page_arrow" id="category_arrow">
+                <p class="up_arrow hide"></p>
+                <p class="down_arrow hide"></p>
+            </div>
+        </div>
+        <div class="channel">
+            <div id="image_channel_list" class="clearfloat channel_list">
+                <div class="channel_item" repeat="item in channelList">
+                    <div class="channel_image" id=image_channel_item_{{index}}>
+                        <div class="channel_info">
+                            <img class="channel_icon" id="channel_icon_{{index}}"/>
+                            <p class="channel_name">{{item.ChannelName}}</p>
+                            <p class="channel_no">{{item.ChannelNo}}</p>
+                        </div>
+                        <div class="show_info program_info" id="program_info_{{index}}">
+                            <p class="show_time" id="show_time_{{index}}">{{item.ShowTime}}</p>
+                            <p class="current_name" id="current_name_{{index}}">{{item.PlayProgramName}}</p>
+                        </div>
+                        <div class="show_info program_info_focus" id="program_info_focus_{{index}}">
+                            <p class="cur_name" id="cur_name_{{index}}">{{item.PlayProgramName}}</p>
+                            <p class="next_name" id="next_name_{{index}}">{{item.NextName}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="channel_page_info" id="image_channel_page_info"></div>
+            <div class="channel_page_arrow" id="image_channel_page_arrow">
+                <p class="up_arrow hide"></p>
+                <p class="down_arrow hide"></p>
+            </div>
+        </div>
+        <div id="image_cover_copy_num" class="copy_num"></div>
+    </div>
+</div>
+<!--END 封套九宫格页面-->
+
+<!--BEGIN 退出页面-->
+<div id="exit_scene" style="display: none;">
+    <div class="sch_rec_list" id="sch_rec_list">
+        <div repeat="item in schRecList">
+            <div class="rec_tag">
+                <p class="tips">{{item.Tips}}</p>
+                <p class="name" id="sch_rec_id_{{index}}">{{item.Name}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="button" id="exit_button_list">
+        <div class="operation_button collection" id="collection_btn">
+            <p id="exit_collection_btn"></p>
+        </div>
+        <div class="operation_button exit" id="exit_btn">
+            <p class="exit_button"></p>
+        </div>
+    </div>
+</div>
+<!--END 退出页面-->
+
+<!--BEGIN 回看封套页面-->
+<div id="lookback_scene"  style="display: none;">
+    <div class="lookback_scene_div">
+        <div id="cover_button" class="button">
+            <div class="to_cover"></div>
+            <div class="tips">频道</div>
+        </div>
+        <div id="lookback_category_list" class="category">
+            <p class="category_info">回看</p>
+            <div class="category_name" id=lookback_category_item_{{index}} repeat="item in categoryList">
+                {{item.Name}}
+            </div>
+            <div class="category_page_arrow" id="lookback_category_page_arrow">
+                <p class="up_arrow"></p>
+                <p class="down_arrow"></p>
+            </div>
+        </div>
+        <div id="lookback_right_list">
+            <div class="channel">
+                <div id="lookback_channel_list" class="channel_list">
+                    <div class="channel_item" id=lookback_channel_item_{{index}} repeat="item in channelList">
+                        <p id=lookback_channel_collection_{{index}} class="collection_icon" style="visibility: hidden;"></p>
+                        <span class="lookback_channel_no">{{item.ChannelNo}}</span>
+                        <span class="channel_name">{{item.ChannelName}}</span>
+                    </div>
+                </div>
+                <div class="channel_page_info" id="lookback_channel_page_info"></div>
+                <div class="channel_page_arrow" id="lookback_channel_page_arrow">
+                    <p class="up_arrow"></p>
+                    <p class="down_arrow"></p>
+                </div>
+            </div>
+            <div class="date" id="date_list">
+                <div class="date_item" id=date_item_{{index}} repeat="item in dateList">
+                    <p class="date_show">{{item.dateShow}}</p>
+                    <p>{{item.weekShow}}</p>
+                </div>
+            </div>
+            <div class="program" id="program_list">
+                <div class="program_item" id=program_item_{{index}} repeat="item in programList">
+                    <p class="tips" id=program_tips_{{index}}>{{item.tips}}</p>
+                    <p class="program_time">{{item.startTimeFmt}}</p>
+                    <p class="program_name">{{item.Name}}</p>
+                </div>
+                <div class="program_page_arrow" id="program_page_arrow">
+                    <p class="up_arrow"></p>
+                    <p class="down_arrow"></p>
+                </div>
+            </div>
+        </div>
+        <div class="right_list" id="lookback_no_data" style="display: none;">该分类下暂无数据</div>
+        <div id="lookback_copy_num" class="copy_num"></div>
+    </div>
+</div>
+<!--END 回看封套页面-->
+
+<!--BEGIN 直播时移页面-->
+<div id="live_seek_scene" style="display: none;">
+    <div class="seek_info" id="live_seek_scene_show">
+        <div class="top_bg">
+            <div class="channel_no" id="seek_channel_no">{{viewChannelSeekData.channelNo}}</div>
+            <div class="channel_name">{{viewChannelSeekData.channelName}}</div>
+            <div class="program_name">{{viewChannelSeekData.curName}}</div>
+            <div class="live_seek_icon" id="live_seek_icon"></div>
+        </div>
+        <div class='bottom_bg'>
+            <div id="live_show_icon" class=""></div>
+            <div class='progress'>
+                <div class='progress_mid' id="live_progress_mid">
+                    <div class='progress_cur_point' id="live_progress_cur_point"></div>
+                </div>
+            </div>
+            <div class="show_time">
+                <span id="cur_play_time">{{viewChannelSeekData.curPlayTime}}</span>
+                <span>&nbsp;/&nbsp;</span>
+                <span id="now_time">{{viewChannelSeekData.nowTime}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!--END 直播时移页面-->
+
+<!--BEGIN 回看播控页面-->
+<div id="seek_scene" style="display: none;">
+    <div class="seek_info" id="seek_scene_show">
+        <div class="top_bg">
+            <div class="channel_no">{{viewSeekData.channelNo}}</div>
+            <div class="channel_name">{{viewSeekData.channelName}}</div>
+            <div class="program_name">{{viewSeekData.programName}}</div>
+            <div class="current_time">{{viewSeekData.currentTime}}</div>
+        </div>
+        <div class='bottom_bg'>
+            <div id="show_icon" class=""></div>
+            <div class='progress'>
+                <div class='progress_mid' id="seek_progress_mid">
+                    <div class='progress_cur_point' id="progress_cur_point"></div>
+                </div>
+            </div>
+            <div class="show_time">
+                <span id="play_time">{{viewSeekData.startTime}}</span>
+                <span>&nbsp;/&nbsp;</span>
+                <span id="play_end_time">{{viewSeekData.endTime}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!--END 回看播控页面-->
+
+<!--BEGIN 错误页面-->
+<div id="error_scene" style="display: none;">
+    <div id="error_scene_tip_id">
+        <table style="background-color: #162638">
+            <tr>
+                <td style="font-size: 44px;height: 100px;">{{tipInfo.error_title}}</td>
+            </tr>
+            <tr>
+                <td style="font-size: 30px;height: 50px;">{{tipInfo.error_code}}</td>
+            </tr>
+            <tr>
+                <td style="font-size: 30px;height: 50px;">{{tipInfo.error_explain}}</td>
+            </tr>
+            <tr>
+                <td style="font-size: 30px;height: 30px;">&nbsp;</td>
+            </tr>
+        </table>
+        <table style="height: 82px;margin-top: 18px;">
+            <tr>
+                <td id="error_scene_location_id_0_0" class="newUnFocus" colspan="25" style="line-height: 100%;background-color: #162638;font-size: 36px;"><div id="error_refresh_img_id"></div>&nbsp;重试</td>
+                <td colspan="1">&nbsp;</td>
+                <td id="error_scene_location_id_0_1" class="newUnFocus" colspan="25" style="background-color: #0093DF;font-size: 36px;"><div id="error_exit_img_id"></div>&nbsp;退出</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!--END 错误页面-->
+
+<!--BEGIN 封套页面的提示（位于页面下方）-->
+<div id="bottom_tips_id"></div>
+<!--END 封套页面的提示（位于页面下方）-->
+
+<!--BEGIN 暂停按钮（右下角）-->
+<div id="pause_icon_id" style="display: none;">
+    <div class="pause_icon"></div>
+</div>
+<!--END 暂停按钮（右下角）-->
+
+<!--BEGIN 数字键切台的频道号-->
+<div id="channel-number-id" class="channel-number-style" style="display: none;"></div>
+<!--END 数字键切台的频道号-->
+
+<!--BEGIN 频道或节目不存在时的提示-->
+<div id="channel-program-not-exit-tip" style="display: none;">
+    <div>
+        <span id="play-tip-img" class="tip_img" style="display: none;"></span>
+        <span id="play-tip-info" class="tip_info"></span>
+    </div>
+</div>
+<!--END 频道或节目不存在时的提示-->
+
+<!-- 预约成功/取消预约提示 -->
+<div id="book_operation_tip" style="display: none;">
+    <p id="book_program"></p>
+    <p class="icon_tip">
+        <span class="book_icon"></span>
+        <span id="operation_tip"></span>
+    </p>
+    <p id="success_tip">预约成功后会在节目开始时进行提示，并可在“预约”分类中查看</p>
+</div>
+
+<!-- 预约到时间提醒 -->
+<div id="book_tip_scene" style="display: none;">
+    <div id="book_program_tip">
+        <p class="tip_info">您预约的节目已经开始了！</p>
+        <p class="book_program">{{programInfo.showTip}}</p>
+        <div class="operation_button">
+            <button id="play_button">立即观看</button>
+            <button id="book_tip_time_id"></button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

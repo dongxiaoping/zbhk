@@ -1,0 +1,109 @@
+.play-menu-common-style{
+    top: 0px;
+    left: 0px;
+    height: 720px;
+    color:white;
+    position: fixed;
+}
+
+.category-play-menu{
+    width: 494px;
+    background-image: url("../../images/pages_zbhk/category-play-menu-bg.png?__sprite");
+    -moz-background-size:100% 100%;
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+}
+
+#category-play-menu-list-div-id{
+    height: 620px;
+    padding-left: 35px;
+}
+
+.category-play-menu-list{
+    height: 100%;
+    float: left;
+}
+
+#c_p_p_0{
+    width: 145px;
+    font-size: 26px;
+    font-family: 'Microsoft YaHei Regular';
+}
+#c_p_p_1{
+    width: 254px;
+    font-size: 22px;
+    margin-left:2px;
+    color:#8B8B8B;
+}
+
+.category-menu-ok-style{
+    font-family: 'Microsoft YaHei Regular';
+    width: 166px;
+    height: 24px;
+    left: 25px;
+    position: absolute;
+    color:white;
+    font-size: 16px;
+    top: 680px;
+    z-index: 1000;
+}
+
+.category-play-menu-list > div {
+    text-align: center;
+    height: 67px;
+    line-height: 67px;
+    color:#D0D0D0;
+}
+.category-play-menu-list .play{
+    background-image: url("../../images/pages_zbhk/play-item-bg.png?__sprite");
+    -moz-background-size:100% 100%;
+    background-size:100% 100%;
+}
+.category-play-menu-list .select{
+    background-color: #0093DF;
+    color: white;
+}
+
+.category-play-menu-list .focus {
+    border: 3px solid white;
+    background-color: #0093DF;
+    height: 61px;
+    line-height: 61px;
+    padding-left: 0px;
+    color:white;
+}
+.category-play-menu-list .item_css{
+    height:100%;
+    vertical-align: center;
+}
+
+.pdp-style{
+    padding-left: 3px;
+}
+
+.collection-1 {
+    height: 20px;
+    width: 20px;
+    margin-left: 3px;
+    float:left;
+    margin-top: 24px;
+}
+.collection-2 {
+    height: 20px;
+    margin-left: 3px;
+    width: 20px;
+    margin-top: 21px;
+}
+.channel-category-channel-num{
+    float: left;
+    text-align: left;
+    width: 45px;
+    padding-left: 2px;
+    text-overflow: clip;
+}
+.category-play-menu-list-icon{
+    width: 50px;height: 58px;float:left;margin-left: 5px;
+}
+.category-play-menu-list-img{
+    width: 45px;max-height: 45px;height: auto;margin-left: 0px;margin-top: 0px;
+}

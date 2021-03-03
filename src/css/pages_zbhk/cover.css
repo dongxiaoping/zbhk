@@ -1,0 +1,217 @@
+#cover_scene_div{
+    background-image: url(../../images/pages_zbhk/covers.jpg);
+    background-position: 0px 0px;
+    width: 1280px;
+    height: 720px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+/*回看按钮*/
+#cover_scene_div .button .to_lookback{
+    position: absolute;
+    left: 37px;
+    top: 340px;
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -286px -549px;
+    width: 29px;
+    height: 35px;
+ }
+#cover_scene_div .button .tips{
+    position: absolute;
+    left: 31px;
+    top: 389px;
+    width: 66px;
+    height: 35px;
+    color: #ffffff;
+    font-size: 20px;
+    display: block;
+    opacity: 0.7;
+}
+#cover_scene_div .focus .to_lookback{
+    position: absolute;
+    left: 13px;
+    top: 322px;
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -673px -324px;
+    width: 76px;
+    height: 91px;
+}
+#cover_scene_div .focus .tips{
+    display: none;
+}
+
+/*分类列表*/
+#cover_scene_div #category_list{
+    position: absolute;
+    left: 98px;
+    width: 139px;
+    color: white;
+}
+#cover_scene_div #category_list .category_info{
+    font-size: 32px;
+    margin: 25px 0 27px 5px;
+}
+#cover_scene_div #category_list .category_name{
+    background: url(../../images/pages_zbhk/cover_category_bg.png);
+    background-size: 139px 74px;
+    display: block;
+    margin-bottom: 4px;
+    font-size: 28px;
+    width: 135px;
+    height: 71px;
+    line-height: 71px;
+    letter-spacing: 10px;
+    text-align: center;
+    padding: 2px;
+}
+#cover_scene_div #category_list .category_name.focus{
+    border: 2px solid white;
+    padding: 0px;
+}
+#cover_scene_div #category_list .category_name.select{
+    background: url(../../images/pages_zbhk/cover_category_select.png);
+    background-size: 139px 74px;
+}
+#cover_scene_div #category_list .category_page_arrow{
+    position: absolute;
+    top: 654px;
+    left: 96px;
+}
+
+#cover_scene_div .up_arrow{
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -853px -194px;
+    width: 21px;
+    height: 21px;
+    float: left;
+}
+#cover_scene_div .down_arrow{
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -820px -376px;
+    width: 21px;
+    height: 21px;
+}
+
+/*频道列表*/
+#cover_scene_div #channel_list {
+    position: absolute;
+    left: 260px;
+    top: 94px;
+    width: 940px;
+    height: 547px;
+    overflow: hidden;
+    background: url(../../images/pages_zbhk/cover_channel_bg.png);
+    background-size: 940px 547px;
+    color: #d0d0d0;
+}
+#cover_scene_div #channel_list .channel_item{
+    float: left;
+    margin-right: 20px;
+    width: 284px;
+    height: 63px;
+    line-height: 63px;
+    padding: 2px;
+    font-size: 22px;
+    overflow: visible;
+}
+#cover_scene_div #channel_list .channel_item .collection_icon{
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -773px -393px;
+    width: 20px;
+    height: 20px;
+    margin: 23px 0 0 12px;
+    float: left;
+}
+#cover_scene_div #channel_list .channel_item .cover_scene_channel_no{
+    padding-left: 6px;
+    margin-left: 32px;
+    float: left;
+    width: 40px;
+    text-align: right;
+}
+#cover_scene_div #channel_list .channel_item .channel_name{
+    float: left;
+    margin-left: 18px;
+    width: 166px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+#cover_scene_div #channel_list .focus{
+    border: 2px solid white;
+    width: 284px;
+    height: 63px;
+    padding: 0px;
+    background: url(../../images/pages_zbhk/cover_channel_select.png) 0 0 no-repeat;
+    background-size: 290px 67px;
+    color: white;
+}
+#cover_scene_div .channel .channel_page_info{
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    color: #d0d0d0;
+    position: absolute;
+    left: 279px;
+    top: 650px;
+}
+#cover_scene_div .channel .channel_page_arrow{
+    position: absolute;
+    top: 654px;
+    left: 1175px;
+}
+#cover_scene_div #channel_list .no_data_tips{
+    color: white;
+    font-size: 28px;
+    text-align: center;
+    margin-top: 23%;
+}
+
+/* 收藏分类批量删除样式 */
+#cover_scene_div .edit, #cover_scene_div .collection_operation{
+    display: none;
+}
+#cover_scene_div .edit.show, #cover_scene_div .collection_operation.show{
+    display: block;
+}
+#cover_scene_div .buttons{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 10px;
+}
+#cover_scene_div .edit{
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -733px -418px;
+    top: 340px;
+}
+#cover_scene_div .edit.focus{
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -820px -324px;
+}
+#cover_scene_div .clear{
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -780px -268px;
+    top: 285px;
+}
+#cover_scene_div .clear.focus{
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -728px -268px;
+}
+#cover_scene_div .finish{
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -595px -487px;
+    top: 386px
+}
+#cover_scene_div .finish.focus{
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -785px -418px;
+}
+#cover_scene_div #channel_list .channel_item .delete_icon{
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -751px -393px;
+    width: 20px;
+    height: 20px;
+    margin: 23px 0 0 12px;
+    float: left;
+}

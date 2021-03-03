@@ -1,0 +1,233 @@
+#cover_image_scene_div{
+    position: absolute;
+    width: 1280px;
+    height: 720px;
+    top: 0px;
+    left: 0px;
+    background-image: url(../../images/pages_zbhk/covers.jpg);
+    background-position: 0px 0px;
+}
+
+/*回看按钮*/
+#cover_image_scene_div .button .to_lookback{
+    position: absolute;
+    left: 37px;
+    top: 340px;
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -286px -549px;
+    width: 29px;
+    height: 35px;
+ }
+#cover_image_scene_div .button .tips{
+    position: absolute;
+    left: 31px;
+    top: 389px;
+    width: 66px;
+    height: 35px;
+    color: #ffffff;
+    font-size: 20px;
+    display: block;
+    opacity: 0.7;
+}
+#cover_image_scene_div .focus .to_lookback{
+    position: absolute;
+    left: 13px;
+    top: 322px;
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -673px -324px;
+    width: 76px;
+    height: 91px;
+}
+#cover_image_scene_div .focus .tips{
+    display: none;
+}
+
+/*分类列表*/
+#cover_image_scene_div #image_category_list{
+    position: absolute;
+    left: 101px;
+    width: 139px;
+    color: white;
+}
+#cover_image_scene_div #image_category_list .category_info{
+    font-size: 32px;
+    margin: 25px 0 27px 5px;
+}
+#cover_image_scene_div #image_category_list .category_name{
+    background: url(../../images/pages_zbhk/cover_category_bg.png);
+    background-size: 139px 74px;
+    display: block;
+    margin-bottom: 4px;
+    font-size: 28px;
+    width: 135px;
+    height: 71px;
+    line-height: 71px;
+    letter-spacing: 10px;
+    text-align: center;
+    padding: 2px;
+}
+#cover_image_scene_div #image_category_list .category_name.focus{
+    border: 2px solid white;
+    padding: 0px;
+}
+#cover_image_scene_div #image_category_list .category_name.select{
+    background: url(../../images/pages_zbhk/cover_category_select.png);
+    background-size: 139px 74px;
+}
+#cover_image_scene_div #image_category_list .category_page_arrow{
+    position: absolute;
+    top: 654px;
+    left: 96px;
+}
+
+#cover_image_scene_div .up_arrow{
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -853px -194px;
+    width: 21px;
+    height: 21px;
+    float: left;
+}
+#cover_image_scene_div .down_arrow{
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -820px -376px;
+    width: 21px;
+    height: 21px;
+}
+
+/*频道列表*/
+#cover_image_scene_div #image_channel_list {
+    position: absolute;
+    left: 250px;
+    top: 45px;
+    padding: 30px 0 30px 20px;
+    width: 938px;
+    height: 558px;
+    overflow: hidden;
+    color: #d0d0d0;
+}
+#cover_image_scene_div #image_channel_list .channel_item{
+    float: left;
+    margin: 0 0 6px 12px;
+    width: 283px;
+    height: 139px;
+}
+#cover_image_scene_div #image_channel_list .channel_item .channel_image{
+    position: relative;
+    width: 283px;
+    height: 139px;
+}
+#cover_image_scene_div #image_channel_list .channel_item .channel_image.focus{
+    transform: scale(1.1,1.1);
+    -webkit-transform: scale(1.1,1.1);
+    -moz-transform: scale(1.1,1.1);
+    border: 3px solid white;
+    z-index: 10;
+}
+/*频道信息：台标，频道名称，频道号*/
+#cover_image_scene_div #image_channel_list .channel_item .channel_info{
+    background: url(../../images/pages_zbhk/cover_image_icon_shadow.png) no-repeat scroll 0 0;
+    background-size: 283px 64px;
+    height: 64px;
+    width: 100%;
+    position: absolute;
+}
+#cover_image_scene_div #image_channel_list .channel_image .channel_icon{
+    float: left;
+    z-index: 4;
+    margin: 8px 4px 0 8px;
+    max-width: 54px;
+    max-height: 36px;
+    background-repeat: no-repeat;
+    background-position: center;
+    visibility: hidden;
+}
+#cover_image_scene_div #image_channel_list .channel_image .channel_name{
+    color: white;
+    float: left;
+    z-index: 4;
+    margin: 6px 0 0 4px;
+    font-size: 22px;
+    visibility: hidden;
+}
+#cover_image_scene_div #image_channel_list .channel_image.focus .channel_icon, #cover_image_scene_div #image_channel_list .channel_image.focus .channel_name{
+    visibility: visible;
+}
+#cover_image_scene_div #image_channel_list .channel_item .channel_no{
+    color: white;
+    float: right;
+    z-index: 4;
+    margin: 10px 10px 0 0;
+    font-size: 18px;
+}
+/*节目信息：节目起止时间，节目名称*/
+#cover_image_scene_div #image_channel_list .channel_item .show_info{
+    position: absolute;
+    z-index: 4;
+    top: 54px;
+    background: url(../../images/pages_zbhk/cover_image_shadow.png) 0 0 no-repeat;
+    height: 85px;
+    width: 100%;
+    overflow: hidden;
+}
+#cover_image_scene_div #image_channel_list .channel_item .show_time{
+    color: #c6c569;
+    font-size: 18px;
+    margin: 30px 0 0 24px;
+}
+#cover_image_scene_div #image_channel_list .channel_item .current_name{
+    color: #FFF;
+    margin-left: 24px;
+    height: 25px;
+    font-size: 24px;
+    line-height: 25px;
+}
+#cover_image_scene_div .channel .channel_page_info{
+    font-size: 20px;
+    font-family: "Microsoft YaHei";
+    color: #9c9c9c;
+    position: absolute;
+    right: 125px;
+    top: 30px;
+}
+#cover_image_scene_div .channel .channel_page_arrow{
+    position: absolute;
+    top: 672px;
+    left: 710px;
+}
+#cover_image_scene_div #image_channel_list .no_data_tips{
+    color: white;
+    font-size: 28px;
+    text-align: center;
+    margin-top: 23%;
+}
+
+/*不落焦：显示时间，当前节目*/
+#cover_image_scene_div #image_channel_list .program_info {
+    display: block;
+}
+#cover_image_scene_div #image_channel_list .program_info_focus {
+    display: none;
+}
+/*落焦：显示当前节目，后续节目*/
+#cover_image_scene_div #image_channel_list .focus .program_info {
+    display: none;
+}
+#cover_image_scene_div #image_channel_list .focus .program_info_focus {
+    display: block;
+}
+#cover_image_scene_div #image_channel_list .focus .program_info_focus p{
+    padding-left: 20px;
+    height: 32px;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: left;
+    text-overflow: ellipsis;
+}
+#cover_image_scene_div #image_channel_list .focus .program_info_focus .cur_name{
+    color: #ffffff;
+    margin-top: 20px;
+    background: url(../../images/pages_zbhk/cover_progress.png) 0 0 no-repeat;
+}
+#cover_image_scene_div #image_channel_list .focus .program_info_focus .next_name{
+    color: #9c9c9c;
+}

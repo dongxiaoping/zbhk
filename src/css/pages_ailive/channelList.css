@@ -1,0 +1,29 @@
+#channel_list_scene{
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    color: red;
+    z-index: 1;
+}
+#double_channel_list_scene_list{
+    padding-top: 20px;
+}
+.channel_list_category_div{
+    height: 285px;
+    width: 1816px;
+    padding-left: 50px;
+}
+.channel_list_category_p{
+    width: 200px;
+    height:50px;
+    font-family:'Microsoft YaHei';
+    color: rgb(255,255,255);
+    font-size: 36px;
+    margin-left: 20px;
+}
+#version_info{
+    position: absolute;
+    right: 30px;
+    color: rgba(255,255, 255, 0.5);
+}

@@ -1,0 +1,37 @@
+#error_scene {
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    width: 1280px;
+    height: 720px;
+    top: 0px;
+    left: 0px;
+}
+#error_scene table{
+    width:100%;
+    height: 286px;
+    table-layout: fixed;
+    font-family: 'Microsoft YaHei Regular';
+    letter-spacing: 0;
+    text-align: center;
+    color: white;
+}
+#error_scene table img{
+    width: 40px;
+    height: 35px;
+    vertical-align:middle;
+}
+
+#error_scene_tip_id{
+    position: absolute;
+    left: 130px;
+    top: 180px;
+    width: 972px;
+    height: 386px;
+}
+
+#error_scene .newFocus{
+    border:4px solid white;
+}
+#error_scene .newUnFocus{
+    border:4px solid transparent;
+}

@@ -1,0 +1,121 @@
+#sch_program_scene {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    position: absolute;
+    color: white;
+    z-index: 1;
+}
+
+#sch_program_scene .sch_seek{
+    background: url("../../images/pages_ailive/shadow_bg1.png") repeat-x;
+    width: 1920px;
+    height: 371px;
+    position: absolute;
+    bottom: 0;
+}
+
+/*日期显示样式*/
+#sch_program_scene .date_show {
+    position: absolute;
+    left: 174px;
+    top: 67px;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+/*左右箭头样式*/
+#sch_program_scene .arrow_icon{
+    position: absolute;
+    top: 203px;
+    width: 18px;
+    height: 32px;
+}
+#sch_program_scene .left_icon{
+    left: 88px;
+    background: url("../../images/pages_ailive/left-arrow.png");
+}
+#sch_program_scene .right_icon{
+    right: 108px;
+    background: url("../../images/pages_ailive/right-arrow.png");
+}
+
+/*节目列表样式*/
+#sch_program_scene .program_info{
+    position: absolute;
+    top: 139px;
+    left: 174px;
+}
+#sch_program_scene .program_item{
+    position: relative;
+    float: left;
+}
+#sch_program_scene .program_content{
+    width: 284px;
+    height: 160px;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-right: 30px;
+}
+#sch_program_scene .item_focus {
+    outline: 4px solid white;
+    -webkit-transform:scale(1.1, 1.1);
+    -moz-transform:scale(1.1, 1.1);
+    -o-transform:scale(1.1, 1.1);
+}
+#sch_program_scene .program_content .program_tips{
+    position: absolute;
+    left: 30px;
+    top: 72px;
+    font-size: 24px;
+    opacity: 0.5;
+}
+#sch_program_scene .program_content .program_time{
+    position: absolute;
+    left: 30px;
+    top: 80px;
+    font-size: 26px;
+    opacity: 0.5;
+    height: 36px;
+    float: left;
+    width: 256px;
+    z-index: 100;
+}
+#sch_program_scene .program_item_select .program_time{
+    color: #fe4c0b;
+    opacity: 1.0;
+}
+#sch_program_scene .item_focus .program_time{
+    opacity: 0.8;
+}
+#sch_program_scene .program_content .program_name{
+    position: absolute;
+    left: 30px;
+    top: 114px;
+    font-size: 30px;
+    opacity: 0.8;
+    overflow: hidden;
+    height: 40px;
+    white-space: nowrap;
+    float: left;
+    width: 256px;
+    z-index: 100;
+}
+#sch_program_scene .program_item_select .program_name{
+    color: #fe4c0b;
+    opacity: 1.0;
+}
+#sch_program_scene .item_focus .program_name{
+    opacity: 1.0;
+}
+/*无论是否落焦，都是显示两行文字，使用两行的遮罩*/
+#sch_program_scene .program_content .shadow{
+    width: 100%;
+    height: 100%;
+    background:  url("../../images/pages_ailive/mask_two_line.png");
+    z-index: 2;
+}
+#sch_program_scene #scene_program_list .program_content .not_begin{
+    opacity: 0.4;
+}

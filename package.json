@@ -1,0 +1,51 @@
+{
+  "name": "the-flash",
+  "version": "1.0.0",
+  "description": "闪电侠: web版电视精选",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.prod.js",
+    "start": "webpack --config webpack.dev.js",
+    "dev": "webpack-dev-server --host 0.0.0.0 --colors --progress --config webpack.dev.js"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.16",
+    "copy-webpack-plugin": "4.6.0",
+    "css-loader": "^0.28.4",
+    "file-loader": "^1.1.11",
+    "html-loader": "^0.5.1",
+    "html-webpack-plugin": "^2.30.1",
+    "style-loader": "^0.18.2",
+    "url-loader": "^1.0.1",
+    "webpack": "^3.5.6",
+    "webpack-dev-server": "^2.6.1",
+    "webpack-merge": "^4.1.0",
+    "write-file-webpack-plugin": "^4.5.0"
+  },
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab.ott.bestv.com.cn/bestv-ott-apps/the-flash.git"
+  },
+  "keywords": [
+    "dsjx"
+  ],
+  "author": "sunshine",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "es6-promise-polyfill": "^1.2.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}

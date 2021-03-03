@@ -1,0 +1,358 @@
+.shadow {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background:  url("../../images/pages_ailive/mask_one_line_icon.png");
+    /*background-size: contain;*/
+    z-index: 2;
+}
+
+.picFocusDiv {
+    z-index: 999;
+    position: relative;
+    left: 0;
+    top:0;
+    -webkit-transform:scale(1.1, 1.1); 
+    -moz-transform:scale(1.1, 1.1); 
+    -o-transform:scale(1.1, 1.1); 
+}
+
+.picFocusDiv .recommend-score{
+    display: block;
+}
+.picFocusDiv .content .main{
+    display: block;
+}
+.barFocusDiv {
+    width: 272px;
+    height: 52px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 98;
+}
+.focus .unFocus{
+    border: 4px solid #fff;
+}
+.unFocus {
+    width: 276px;
+    height: 154px;
+    border: 4px solid transparent;
+    position: relative;
+    left: 0;
+    top: 0;
+    z-index: 99;
+}
+
+.rec_info .rec_item {
+    float: left;
+    width: 200px;
+    height: 272px;
+    margin-right: 10px;
+    position: relative;
+    left:0;
+    top:0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background-image: url("../../images/pages_ailive/default_vertical_icon.jpg");
+    background-size:cover;
+}
+.rec_item .rec_name {
+    font-size: 28px;
+    color: rgba(255, 255, 255, 1);
+    margin-top: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.rec_item .content{
+    padding-left: 10px;
+    position: absolute;
+    bottom: 20px;
+    text-align: left;
+    width: 100%;
+    font-size: 28px;
+    color: rgba(255,255,255, 0.7);
+}
+.rec_item.picFocusDiv .rec_shadow {
+    width: 100%;
+    height: 100%;
+    background: url(../../images/pages_ailive/rec_shadow.png) repeat;
+    z-index: 2;
+}
+.rec_item .rec_score{
+    color: rgb(255,255,255);
+    font-size: 26px;
+    z-index: 3;
+    position: absolute;
+    left: 20px;
+    top: 12px;
+    display: none;
+}
+.rec_item .rec_update_episode {
+    font-size: 26px;
+    color: rgba(255, 255, 255, 0.7);
+    display: none;
+}
+
+.old-program-pic-window {
+    width: 284px;
+    height: 160px;
+    border-bottom: 0px solid transparent;
+    color: white;
+    position: relative;
+    background-size: 100% 100%;
+}
+
+.old-program-pic-window .top {
+    height: 35%;
+    width: 100%;
+    position: absolute;
+    top:0;
+}
+
+.old-program-pic-window .content {
+    width: 100%;
+    height: 65%;
+    position: absolute;
+    text-align: left;
+    padding-left: 25px;
+    z-index:4;
+    top:68px;
+}
+
+.loading_dot{
+    background: url(../../images/pages_ailive/loading-dot.png) no-repeat;
+    background-size: 100% 100%;
+    width: 12px;
+    height: 12px;
+    float:left;
+    margin-left: 15px;
+}
+
+#page_loading_component{
+    position: fixed;
+    top:1000px;
+    width: 250px;
+    height: 20px;
+    left:880px;
+    z-index:999;
+}
+
+/*数字键选台右上角输入显示*/
+.channel-number-style{
+    position:fixed;
+    top:20px;
+    right:40px;
+    width: 100px;
+    height: 45px;
+    color: #94FA0B;
+    font-size: 56px;
+}
+
+.live_collection_div_class{
+    width: 400px;height: 80px;position: fixed;left: 600px;top:970px;z-index:999;
+}
+
+.live_collection_div_class .focus{
+    border:4px solid white;
+}
+.content .main {
+    color: rgba(255, 255, 255,0.8);
+    font-size: 34px;
+    height: 40px;
+    white-space: nowrap;
+    width: 250px;
+    text-overflow:ellipsis;
+}
+
+.focus .content .main {
+    color: rgba(255, 255, 255,1.0);
+}
+
+.focus .content .subhead {
+    visibility: visible;
+}
+
+.content .subhead {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 30px;
+    margin-top: 3px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+    visibility:hidden;
+}
+
+.top .number {
+    text-align: right;
+    margin-right: 18px;
+    color:rgba(255, 255, 255, 0.8);
+    font-family: "Microsoft YaHei";
+    margin-top: 8px;
+    font-size: 30px;
+}
+
+.top_number {
+    text-align: right;
+    margin-right: 18px;
+    color:rgba(255, 255, 255, 0.8);
+    font-family: "Microsoft YaHei";
+    margin-top: 8px;
+    font-size: 30px;
+}
+
+.program-pic-window .content {
+    width: 100%;
+    position: absolute;
+    z-index: 4;
+    top: 68px;
+    left: 20px;
+    text-align: left;
+    width: 240px;
+}
+
+#collection_edit_function_tip_id{
+    margin-left: 150px;
+    float: left;
+    margin-top: 10px;
+    height: 35px;
+}
+
+#jx_sub_edit_function_tip_id{
+    height: 65px;
+    margin-left: 240px;
+    margin-top: 5px;
+}
+
+#no_recommend_jx_sub_edit_function_tip_id{
+    height: 65px;
+    margin-left: 240px;
+    margin-top: 25px;
+}
+.edit_function_tip{
+    color:rgba(255,255,255,0.5);
+    width: 600px;
+    font-size: 28px;
+}
+
+.min_tab_height_set{
+    height: 154px;
+}
+
+.channel_mini_category_list{
+    margin-top: 25px;
+    height:50px;
+    padding-left: 70px;
+}
+.channel_mini_category_list .focus{
+    color: rgba(255,255,255,1);
+    border-bottom: 6px solid white;
+    -webkit-transform:scale(1.1, 1.1);
+    -moz-transform:scale(1.1, 1.1);
+    -o-transform:scale(1.1, 1.1);
+}
+
+.channel_mini_category_list .selected{
+    color:rgba(255,255,255,1);
+}
+
+.channel_mini_category_list_label{
+    font-family: 'Microsoft YaHei';
+    font-size: 40px;
+    letter-spacing: 2px;
+
+}
+.channel_mini_category_item_div{
+    color:rgba(255,255,255,0.5);
+    float:left;
+    margin-right: 40px;
+    height: 48px;
+}
+#mini_collection_edit_function_tip_id{
+    color:rgba(255,255,255,0.5);
+    width: 600px;
+    font-family: "Microsoft YaHei";
+    font-size: 28px;
+    position: fixed;
+    top: 990px;
+    left:320px;
+}
+.channel_mini_collection_del{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 100;
+    background-image: url("../../images/pages_ailive/trash_focus.png");
+    width: 38px;
+    height: 39px;
+}
+
+#no_recommend_top_channel_mini_scene_pic_windows_id{
+    height: 245px;
+    width: 100%;
+    margin-top: -110px;
+    padding-left: 52px;
+}
+.jx_sub_operate_category_name{
+    width: 100px;
+    position: absolute;
+    top:45px;
+    left:-8px;
+    font-size: 40px;
+    font-family: 'Microsoft YaHei';
+    color:rgb(255,255,255);
+}
+
+#version_num_id{
+    position: fixed;
+    top:90px;
+    left:1740px;
+    color:rgba(255,255, 255, 0.5);
+    font-size: 16px;
+    font-family: 'Microsoft YaHei';
+}
+
+.keyOpTip{
+    position: fixed;bottom:60px;width: 100%;height: 240px;z-index: 999;font-size: 38px;font-family: 'Microsoft YaHei';color:white;
+}
+.keyOpTipOpDiv{
+    width: 100%;height: 40%;background: rgba(0, 0, 0, 0.8);
+}
+
+
+/*频道付费提示样式*/
+#channel-pay-tips-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: -1;
+}
+#channel-pay-tips-image .tips-image{
+    position: absolute;
+    left: 386px;
+    top: 140px;
+    background: url("../../images/pages_ailive/channel_pay_img.jpg");
+    opacity: 1.0;
+    width: 1147px;
+    height: 379px;
+    z-index: 100;
+}
+#channel-pay-tips-info{
+    position: absolute;
+    top: 519px;
+    width: 100%;
+    line-height: 86px;
+    background-color: black;
+    opacity: 0.7;
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    letter-spacing: 5px;
+    z-index: 1000;
+}

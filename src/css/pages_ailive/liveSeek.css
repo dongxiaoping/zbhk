@@ -1,0 +1,97 @@
+#live_seek_scene {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 1;
+}
+
+/*右上角图标+提示*/
+#live_seek_scene .live_seek_icon{
+    position: absolute;
+    top: 50px;
+    right: 100px;
+}
+#live_seek_scene .live_seek_icon .live_icon {
+    float: left;
+    background: url("../../images/pages_ailive/live_seek_icon.png") no-repeat;
+    width: 44px;
+    height: 45px;
+}
+#live_seek_scene .live_seek_icon .tips{
+    float: left;
+    font-family: "Microsoft YaHei";
+    font-size: 32px;
+    color: rgb(255, 255, 255);
+    height: 45px;
+    line-height: 45px;
+    margin-left: 20px;
+}
+
+/*播控条样式*/
+#live_seek_scene .live_seek{
+    background: url("../../images/pages_ailive/shadow_bg2.png") repeat-x;
+    width: 1920px;
+    height: 371px;
+    position: absolute;
+    bottom: 0;
+}
+#live_seek_scene .live_seek_info .live_seek_show{
+    position: absolute;
+    left: 174px;
+    bottom: 60px;
+    color: #ffffff;
+}
+#live_seek_scene .live_seek_info .live_channel .channel_no{
+    font-size: 40px;
+    font-weight: bold;
+}
+#live_seek_scene .live_seek_info .live_channel .channel_name{
+    font-size: 40px;
+    font-weight: bold;
+}
+#live_seek_scene .live_seek_info .live_program{
+    margin: 10px 0 0 52px;
+    font-size: 32px;
+    font-weight: bold;
+}
+#live_seek_scene .live_seek_info .progress{
+    margin: 20px 0 20px 0;
+    background: rgba(255, 255, 255, 0.5);
+    width: 1572px;
+    height: 1px;
+}
+#live_seek_scene .live_seek_info .progress_mid{
+    float: left;
+    background: #fff;
+    margin-top: -1px;
+    height: 3px;
+}
+#live_seek_scene .live_seek_info .progress_cur_point{
+    float: left;
+    background-image: url("../../images/pages_ailive/progress_point.png");
+    height: 25px;
+    width: 25px;
+    margin: -12px 0 0 -25px;
+}
+#live_seek_scene .live_seek_info .channel_time{
+    margin: 20px 0 30px 0;
+    height: 44px;
+}
+#live_seek_scene .live_seek_info .channel_time p{
+    float: left;
+    height: 41px;
+    line-height: 41px;
+    font-size: 30px;
+}
+#live_seek_scene .live_seek_info .channel_time .icon{
+    width: 41px;
+    height: 41px;
+    float: left;
+    margin-right: 16px;
+    background-image: url("../../images/pages_ailive/play_icon.png");
+}
+#live_seek_scene .live_seek_info .channel_time .end_time{
+    opacity: 0.5;
+    font-weight: lighter;
+}

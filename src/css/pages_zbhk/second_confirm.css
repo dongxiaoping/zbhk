@@ -1,0 +1,80 @@
+#second_confirm_tip{
+    height: 362px;
+    width: 1280px;
+    position: absolute;
+    top: 280px;
+    overflow: hidden;
+    color: #ffffff;
+    font-size: 32px;
+    z-index: 1000;
+    background: url("../../images/pages_zbhk/second_confirm_bg.png") repeat-x;
+}
+
+#second_confirm_tip .tip_info{
+    height: 32px;
+    line-height: 32px;
+}
+#second_confirm_tip .icon{
+    width: 32px;
+    height: 32px;
+    float: left;
+}
+#second_confirm_tip .tip{
+    position: absolute;
+    top: 150px;
+}
+#second_confirm_tip .tip .clear_icon{
+    margin: 2px 20px 0 496px;
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -681px -487px;
+    width: 32px;
+    height: 32px;
+}
+
+#second_confirm_tip .button{
+    position: absolute;
+    bottom: 60px;
+}
+#second_confirm_tip .button .common_button{
+    float: left;
+    width: 230px;
+    height: 50px;
+    border: 3px solid rgb(115,115,118);
+    border-radius: 25px;
+}
+#second_confirm_tip .button .confirm_button{
+    margin: 0 76px 0 370px;
+}
+#second_confirm_tip .button .confirm_icon{
+    margin: 8px 10px 0 54px;
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -647px -487px;
+    width: 32px;
+    height: 32px;
+}
+#second_confirm_tip .button .cancel_icon{
+    margin: 8px 10px 0 54px;
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -715px -487px;
+    width: 32px;
+    height: 32px;
+}
+#second_confirm_tip .button .icon{
+    opacity: 0.5;
+}
+#second_confirm_tip .button .tip_info{
+    margin-top: 7px;
+    opacity: 0.5;
+}
+
+/*落焦样式*/
+#second_confirm_tip .button .common_button.focus{
+    background-color: rgb(0, 156, 234);
+    border-color: white;
+}
+#second_confirm_tip .button .common_button.focus .tip_info{
+    opacity: 1.0;
+}
+#second_confirm_tip .button .common_button.focus .icon{
+    opacity: 1.0;
+}

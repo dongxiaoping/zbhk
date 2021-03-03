@@ -1,0 +1,119 @@
+#jx_series_scene {
+    background: url("../../images/pages_ailive/shadow_bg2.png") repeat-x;
+    height: 371px;
+    width: 1920px;
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+    color: white;
+}
+
+/*追剧按钮, 节目信息*/
+#jx_series_scene .program_info .subscribe_show{
+    position: absolute;
+    left: 174px;
+    top: 30px;
+    width: 210px;
+    height: 60px;
+}
+#jx_series_scene .program_info .sub_focus{
+    outline: 3px solid white;
+}
+#jx_series_scene .program_info .subscribe_tip{
+    font-size: 40px;
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 60px;
+    margin-left: 20px;
+    float: left;
+    letter-spacing: 20px;
+}
+#jx_series_scene .has_sub .subscribed_icon{
+    background: url("../../images/pages_ailive/subscribe_icon.png") no-repeat;
+}
+#jx_series_scene .has_sub .subscribe_tip{
+    letter-spacing: 2px;
+}
+#jx_series_scene .subscribed_icon{
+    background: url("../../images/pages_ailive/unsubscribe_icon.png") no-repeat;
+    width: 40px;
+    height: 40px;
+    float: right;
+    margin: 13px 10px 0 0;
+}
+#jx_series_scene .program_info .series_name{
+    position: absolute;
+    top: 30px;
+    height: 60px;
+    line-height: 60px;
+    left: 420px;
+    font-size: 40px;
+    font-weight: bold;
+}
+/*左右箭头*/
+#jx_series_scene div.left_icon, #jx_series_scene div.right_icon{
+    position: absolute;
+    top: 175px;
+    width: 20px;
+    height: 36px;
+    background-repeat: no-repeat;
+}
+#jx_series_scene .left_icon{
+    left: 88px;
+    background: url("../../images/pages_ailive/left-arrow.png")
+}
+#jx_series_scene .right_icon{
+    right: 108px;
+    background: url("../../images/pages_ailive/right-arrow.png")
+}
+
+/*剧集列表*/
+#jx_series_scene .series_list{
+    position: absolute;
+    left: 174px;
+    top: 120px;
+}
+#jx_series_scene .series_list .series_item{
+    position: relative;
+    float: left;
+    margin-right: 30px;
+}
+#jx_series_scene .series_list .series_content{
+    width: 284px;
+    height: 160px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#jx_series_scene .series_list .series_content .series_name{
+    position: absolute;
+    left: 30px;
+    top: 114px;
+    font-size: 30px;
+    opacity: 0.8;
+    overflow: hidden;
+    height: 40px;
+    width: 256px;
+    white-space: nowrap;
+    float: left;
+    z-index: 100;
+}
+#jx_series_scene .series_list .series_item_focus{
+    outline: 4px solid white;
+    -webkit-transform:scale(1.1, 1.1);
+    -moz-transform:scale(1.1, 1.1);
+    -o-transform:scale(1.1, 1.1);
+}
+#jx_series_scene .series_list .series_item_focus .series_name{
+    opacity: 1.0;
+}
+#jx_series_scene .series_list .series_item_select .series_name{
+    color: #fe4c0b;
+    opacity: 1.0;
+}
+/*无论是否落焦，都是显示一行文字，使用一行的遮罩*/
+#jx_series_scene .series_list .jx_shadow{
+    width: 100%;
+    height: 100%;
+    background:  url("../../images/pages_ailive/mask_one_line.png");
+    z-index: 2;
+}

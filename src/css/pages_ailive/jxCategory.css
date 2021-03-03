@@ -1,0 +1,136 @@
+#jx_no_recommend_scene{
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    color: red;
+}
+/*精选分类节目：不落焦，显示一行文字，使用一行遮罩；落焦使用两行文字，两行遮罩*/
+#jx_no_recommend_scene .shadow{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background:  url("../../images/pages_ailive/mask_one_line.png");
+    z-index: 2;
+}
+#jx_no_recommend_scene .picFocusDiv .shadow{
+    background:  url("../../images/pages_ailive/mask_two_line.png");
+}
+/*追剧（编辑状态）：显示两行文字及右上角trash图标，使用一行加角标的遮罩*/
+#jx_no_recommend_scene #no_recommend_schedule_category_sub_list_id .sub_edit_status .shadow{
+    background:  url("../../images/pages_ailive/mask_one_line_icon.png");
+}
+/*追剧（编辑状态）且落焦：显示两行文字及右上角trash图标，使用两行加角标的遮罩*/
+#jx_no_recommend_scene #no_recommend_schedule_category_sub_list_id .sub_edit_status.focus .shadow{
+    background:  url("../../images/pages_ailive/mask_two_line_icon.png");
+}
+.recommend-pic-window {
+    width: 284px;
+    height: 387px;
+    border-bottom: 0px solid transparent;
+    color: white;
+    position: relative;
+    background-size: 100% 100%;
+}
+
+.schedule_category_name_sub{
+    height: 80px;
+    line-height: 80px;
+    float: left;
+    width: 200px;
+    color:rgb(255,255,255);
+    font-size: 36px;
+    font-family:'Microsoft YaHei Bold';
+    margin-left: 0px;
+}
+
+.schedule_category_name_p{
+    margin-top: 40px;
+    height: 60px;
+    float: left;
+    width: 100%;
+    color:rgb(255,255,255);
+    font-size: 40px;
+    font-family:'Microsoft YaHei';
+    margin-left: 30px;
+}
+
+.jx_sub_label{
+    color:rgb(255,255,255);
+    font-size: 30px;
+    line-height: 74px;
+    margin-left: 12px;
+}
+
+.jx_sub_img{
+    height: 36px;
+    margin-top: 20px;
+    float: left;
+}
+.jx_sub_label_par_div{
+    height: 100%;
+    width:100px;
+    float: left
+}
+.jx_sub_operate_div{
+    position: absolute;
+    top:95px;
+    left: 90px;
+    height: 80px;
+    width: 800px;
+}
+
+.jx_category_edit_div_class{
+    height: 100%;width: 180px;float:left;
+}
+
+.program-mini-window {
+    width: 284px;
+    height: 160px;
+    margin-left: 16px;
+    margin-top: 10px;
+    float: left;
+}
+
+.recommend-pic-window.focus .recommend-shadow {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background:url(../../images/pages_ailive/recommend_shadow_bg.png);
+}
+.recommend-score{
+    font-family: "Microsoft YaHei Regular";
+    color: rgb(255,255,255);
+    font-size: 32px;
+    z-index:3;
+    position: absolute;
+    left: 20px;
+    top: 12px;
+    display: none;
+}
+
+.recommend-pic-window .content {
+    width: 250px;
+    height: 100px;
+    top: 285px;
+    left: 20px;
+    position: absolute;
+    z-index: 3;
+}
+
+.recommend-pic-window .content .main{
+    visibility: hidden;
+}
+.recommend-pic-window.focus .content .main{
+    visibility: visible;
+}
+.jx_sub_operate_div .unFocus{
+    border:4px solid transparent;
+}
+.jx_sub_operate_div .focus{
+    border:4px solid white;
+}

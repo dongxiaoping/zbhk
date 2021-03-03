@@ -1,0 +1,277 @@
+.lookback_scene_div{
+    position: absolute;
+    width: 1280px;
+    height: 720px;
+    top: 0px;
+    left: 0px;
+    background-image: url(../../images/pages_zbhk/covers.jpg);
+    background-position: 0px -720px;
+}
+
+/*回看按钮*/
+.lookback_scene_div .button .to_cover{
+    position: absolute;
+    left: 34px;
+    top: 342px;
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -837px -418px;
+    width: 34px;
+    height: 34px;
+ }
+.lookback_scene_div .button .tips{
+    position: absolute;
+    left: 31px;
+    top: 390px;
+    width: 66px;
+    height: 35px;
+    color: #ffffff;
+    font-size: 20px;
+    display: block;
+    opacity: 0.7;
+}
+.lookback_scene_div .focus .to_cover{
+    position: absolute;
+    left: 13px;
+    top: 322px;
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -595px -324px;
+    width: 76px;
+    height: 92px;
+}
+.lookback_scene_div .focus .tips{
+    display: none;
+}
+
+/*分类列表*/
+.lookback_scene_div #lookback_category_list{
+    position: absolute;
+    left: 101px;
+    width: 139px;
+    color: white;
+}
+.lookback_scene_div #lookback_category_list .category_info{
+    font-size: 32px;
+    margin: 25px 0 27px 5px;
+}
+.lookback_scene_div #lookback_category_list .category_name{
+    background: url(../../images/pages_zbhk/cover_category_bg.png);
+    background-size: 139px 74px;
+    display: block;
+    margin-bottom: 4px;
+    font-size: 28px;
+    width: 135px;
+    height: 71px;
+    line-height: 71px;
+    letter-spacing: 10px;
+    text-align: center;
+    padding: 2px;
+}
+.lookback_scene_div #lookback_category_list .category_name.focus{
+    border: 2px solid white;
+    padding: 0px;
+}
+.lookback_scene_div #lookback_category_list .category_name.select{
+    background: url(../../images/pages_zbhk/cover_category_select.png);
+    background-size: 139px 75px;
+}
+.lookback_scene_div #lookback_category_list .category_page_arrow{
+    position: absolute;
+    top: 652px;
+    left: 96px;
+}
+
+.lookback_scene_div .up_arrow{
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -853px -194px;
+    width: 21px;
+    height: 21px;
+    float: left;
+}
+.lookback_scene_div .down_arrow{
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -820px -376px;
+    width: 21px;
+    height: 21px;
+}
+
+/*频道列表*/
+.lookback_scene_div #lookback_channel_list {
+    position: absolute;
+    left: 271px;
+    top: 94px;
+    width: 292px;
+    height: 547px;
+    background: url(../../images/pages_zbhk/lookback_channel_bg.png);
+    background-size: 292px 547px;
+    margin-right: 4px;
+}
+.lookback_scene_div #lookback_channel_list .channel_item{
+    width: 286px;
+    height: 63px;
+    line-height: 63px;
+    padding: 2px;
+    font-size: 22px;
+    color: #d0d0d0;
+}
+.lookback_scene_div #lookback_channel_list .channel_item .collection_icon{
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -773px -393px;
+    width: 20px;
+    height: 20px;
+    margin: 23px 0 0 12px;
+    float: left;
+}
+.lookback_scene_div #lookback_channel_list .channel_item .lookback_channel_no{
+    padding-left: 6px;
+    float: left;
+    width: 40px;
+    text-align: right;
+}
+.lookback_scene_div #lookback_channel_list .channel_item .channel_name{
+    float: left;
+    margin-left: 18px;
+    width: 166px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.lookback_scene_div #lookback_channel_list .focus{
+    border: 2px solid white;
+    padding: 0px;
+}
+.lookback_scene_div #lookback_channel_list .select{
+    background-color: #0093df;
+    color:white;
+}
+.lookback_scene_div .channel .channel_page_info{
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    color: #d0d0d0;
+    position: absolute;
+    left: 279px;
+    top: 650px;
+}
+.lookback_scene_div .channel .channel_page_arrow {
+    position: absolute;
+    left: 518px;
+    top: 648px;
+}
+
+/*日期列表*/
+.lookback_scene_div .date{
+    position: absolute;
+    left: 567px;
+    top: 94px;
+    width: 593px;
+    height: 547px;
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: 0px 0px;
+}
+.lookback_scene_div .date .date_item{
+    width: 136px;
+    height: 64px;
+    padding: 2px;
+}
+.lookback_scene_div .date .date_item.focus{
+    border: 2px solid white;
+    padding: 0px;
+    color: white;
+}
+.lookback_scene_div .date .date_item.select{
+    background-color: #0093df;
+    color:white;
+}
+.lookback_scene_div .date .date_item p{
+    display: inline;
+    font-size: 22px;
+    color: #d0d0d0;
+    line-height: 64px;
+}
+.lookback_scene_div .date .date_item .date_show{
+    margin: 0 8px 0 10px;
+}
+
+.lookback_scene_div .date .date_item.select p{
+    color: white;
+}
+
+/*节目列表*/
+.lookback_scene_div .program{
+    position: absolute;
+    left: 705px;
+    top: 94px;
+    width: 455px;
+}
+.lookback_scene_div .program .program_item{
+    width: 451px;
+    height: 63px;
+    padding: 2px;
+    color: #d0d0d0;
+    font-size: 22px;
+    line-height: 63px;
+}
+.lookback_scene_div .program .focus.program_item {
+    padding: 0px;
+}
+.lookback_scene_div .program .program_item .tips{
+    float: left;
+    font-size: 16px;
+    margin: 0 -40px 0 6px;
+    width: 33px;
+}
+.lookback_scene_div .program .program_item .program_time{
+    float: left;
+    margin: 0 36px 0 48px;
+}
+.lookback_scene_div .program .program_item .program_name{
+    float: left;
+    width: 300px;
+    overflow: hidden;
+}
+.lookback_scene_div .program .playing_program .playing_tips{
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -853px -168px;
+    width: 24px;
+    height: 24px;
+    margin: 20px 2px 0 10px;
+}
+.lookback_scene_div .program .playing_program .program_time{
+    margin-left: 12px;
+}
+.lookback_scene_div .program .playing_program p{
+    color: #00FF00;
+}
+.lookback_scene_div .program .not_start p{
+    color: gray;
+}
+.lookback_scene_div .program .focus{
+    border: 2px solid white;
+    padding: 0px;
+}
+.lookback_scene_div .program .select{
+    background-color: #0093df;
+    color:white;
+}
+.lookback_scene_div .program .focus p{
+    color: white;
+}
+.lookback_scene_div .program .program_page_arrow{
+    position: absolute;
+    left: 395px;
+    top: 556px;
+}
+.lookback_scene_div #program_list .no_data_tips{
+    color: white;
+    font-size: 26px;
+    text-align: center;
+    margin-top: 48%;
+}
+
+/*分类下没有数据的样式*/
+#lookback_no_data {
+    position: absolute;
+    left: 45%;
+    top: 45%;
+    color: white;
+    font-size: 28px;
+    text-align: center;
+}

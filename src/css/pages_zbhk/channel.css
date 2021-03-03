@@ -1,0 +1,148 @@
+.channel-play-menu{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 878px;
+    height: 720px;
+    color:#d0d0d0;
+    background-image: url("../../images/pages_zbhk/channel-play-menu-bg.png?__sprite");
+    -moz-background-size:734px 100%;
+    background-size:734px 100%;
+    background-repeat: no-repeat;
+}
+#p_d_p_0{
+    width: 254px;
+    font-size: 22px;
+    font-family: 'Microsoft YaHei Regular';
+}
+#p_d_p_2{
+    margin-left: 2px;
+    font-size: 22px;
+    color: white;
+}
+.channel-play-menu-list{
+    float: left;
+    height: 100%;
+}
+.menu-channel-collection{
+    margin-left: 0px;
+    padding-right: 3px
+}
+.menu-channel-collection-show{
+    visibility: visible;
+}
+.menu-channel-collection-hidden{
+    visibility: hidden;
+}
+.category-collection-ico-style-1{
+    width: 20px;
+    height: 20px;
+    float:left;
+    margin-top: 24px;
+    margin-left: 18px;
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -773px -393px;
+    background-repeat: no-repeat;
+}
+.channel-play-menu-list > div {
+    text-align: center;
+    height: 67px;
+    line-height: 67px;
+}
+#p_d_p_1{
+    margin-left: 2px;
+    font-size: 22px;
+    width: 145px;
+    background-image: url("../../images/pages_zbhk/channel-play-menu-save.png?__sprite");
+    background-size: 145px 622px;
+}
+.program-style{
+    padding-left: 10px;
+    height: 63px;
+    width: 281px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.program-label-style-2{
+    position: relative;
+    top: -82px;
+    left: 255px;
+    width: 34px;
+    height: 40px;
+    font-size: 16px;
+}
+.channel-play-menu-list .focus {
+    border: 3px solid white;
+    background-color: #0093DF;
+    padding-left: 0px;
+    height: 61px;
+    line-height: 61px;
+    color: white;
+}
+#p_d_p_2.channel-play-menu-list .pdp-style.focus{
+    width: 289px;
+    height: 60px;
+    float: left;
+}
+.channel-play-menu-list .select {
+    background-color: #0093DF;
+    color: white;
+}
+.channel-play-menu-list .play{
+    background-image: url("../../images/pages_zbhk/play-item-bg.png?__sprite");
+    -moz-background-size: 100% 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+#p_d_p_2.channel-play-menu-list .select {
+    height: 66px;
+}
+#p_d_p_2 .play{
+    position: absolute;
+    background-size:281px 100%;
+}
+.program-live-style{
+    color:#00FF00;
+}
+.program-foreshow-style{
+    color:#d0d0d0;
+}
+.program-foreshow-style.is-booked .book-icon{
+    display: block;
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -32px -621px;
+    width: 22px;
+    height: 22px;
+    position: relative;
+    top: 3px;
+    left: 263px;
+}
+#p_d_p_2 .book_operation_tip{
+    position: relative;
+    float: left;
+    background-image: url(../../images/pages_zbhk/book-operation-bg.png);
+    width: 140px;
+    height: 58px;
+    line-height: 58px;
+    font-size: 22px;
+    text-align: center;
+    display: none;
+    margin-top: 5px;
+}
+.schedule-menu-channel-num{
+    float:left;
+    text-align: left;
+    width: 45px;
+    padding-left: 2px;
+    text-overflow: clip;
+}
+.channel-play-menu-list-icon{
+    width: 50px;height: 58px;float:left;
+}
+#channel_play_menu_part_channel_name{
+    width: 500px;margin-left: 40px;color:#B9B9BA;font-size: 24px;height: 35px;overflow: hidden
+}
+.channel-play-menu-list-img{
+    width: 45px;max-height: 45px;height: auto;margin-left: 5px;
+}

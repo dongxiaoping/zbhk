@@ -1,0 +1,76 @@
+*{
+    font-family:"Microsoft YaHei";
+    margin:0;
+    padding:0;
+    overflow: visible;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    background: transparent;
+    background-color: transparent;
+    text-decoration: none;
+}
+ol, li, ul{
+    list-style-image:none;
+    list-style-position:outside;
+    list-style-type:none;
+    list-style:none;
+}
+body{
+    margin: 0 auto;
+    position: absolute;
+    height: 1080px;
+    width: 1920px;
+    transform: scale(0.66);
+    transform-origin: left top;
+    -webkit-transform:scale(0.66);
+    -webkit-transform-origin-x:0px;
+    -webkit-transform-origin-y:0px;
+}
+ol, ul {
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+p{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+img {
+    border:0;
+}
+.clearfloat:after {
+    clear: both;
+    display: block;
+    content:"";
+    visibility:hidden;height:0
+}
+.clearfloat{zoom:1}
+
+/*居中统一的提示信息：图片+文字*/
+#channel-program-not-exit-tip{
+    display: block;
+    width: 1920px;
+    position: absolute;
+    left: 0;
+    top: 382px;
+}
+#channel-program-not-exit-tip div{
+    background: rgb(84, 81, 81);
+}
+#channel-program-not-exit-tip .tip_img{
+    float: left;
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -853px -142px;
+    width: 24px;
+    height: 24px;
+    margin: 12px 10px 0 650px;
+}
+#channel-program-not-exit-tip .tip_info{
+    font-size: 24px;
+    height: 48px;
+    line-height: 48px;
+    color: white;
+}

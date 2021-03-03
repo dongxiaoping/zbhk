@@ -1,0 +1,145 @@
+.category_name{
+    background: url(./img/cover_category_bg.png);
+    background-size: 139px 74px;
+    display: block;
+    margin-bottom: 4px;
+    font-size: 28px;
+    width: 135px;
+    height: 71px;
+    line-height: 71px;
+    letter-spacing: 10px;
+    text-align: center;
+    padding: 2px;
+}
+
+.channel_item{
+    float: left;
+    margin-right: 20px;
+    width: 284px;
+    height: 63px;
+    line-height: 63px;
+    padding: 2px;
+    font-size: 22px;
+    overflow: visible;
+}
+
+.channel_name{
+    float: left;
+    margin-left: 18px;
+    width: 166px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.channel_list {
+    position: absolute;
+    left: 260px;
+    top: 94px;
+    width: 940px;
+    height: 547px;
+    overflow: hidden;
+    background: url(./img/cover_channel_bg.png);
+    background-size: 940px 547px;
+    color: #d0d0d0;
+}
+
+.button .to_lookback{
+    position: absolute;
+    left: 37px;
+    top: 340px;
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -286px -549px;
+    width: 29px;
+    height: 35px;
+ }
+
+.button .tips{
+    position: absolute;
+    left: 31px;
+    top: 389px;
+    width: 66px;
+    height: 35px;
+    color: #ffffff;
+    font-size: 20px;
+    display: block;
+    opacity: 0.7;
+}
+
+.cover_scene_div{
+    background-image: url(../../images/pages_zbhk/covers.jpg);
+    background-position: 0px 0px;
+    width: 1280px;
+    height: 720px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.category_list {
+    position: absolute;
+    left: 98px;
+    width: 139px;
+    color: white;
+}
+
+.category_info {
+    font-size: 32px;
+    margin: 25px 0 27px 5px;
+}
+.clearfloat:after {
+    clear: both;
+    display: block;
+    content: "";
+    visibility: hidden;
+    height: 0;
+}
+
+.category-play-menu{
+    width: 494px;
+    background-image: url("../../images/pages_zbhk/category-play-menu-bg.png?__sprite");
+    -moz-background-size:100% 100%;
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+}
+
+.play-menu-common-style{
+    top: 0px;
+    left: 0px;
+    height: 720px;
+    color:white;
+    position: fixed;
+}
+
+.category-play-menu-list{
+    height: 100%;
+    float: left;
+}
+.c_p_p_0 {
+    width: 145px;
+    font-size: 26px;
+    float:left;
+    font-family: 'Microsoft YaHei Regular';
+}
+
+.liveCategoryTitle{
+    width: 100%;height: 98px;
+}
+
+.liveCategoryTitle .part{
+    width: 284px;height: 100%;padding-top: 37px;
+}
+
+.liveCategoryTitle .part .category{
+    font-size: 32px;font-family: 'Microsoft YaHei';color:#FFFFFF;margin-left: 83px;
+}
+
+.liveCategoryTitle .part .channel{
+    margin-left: 20px;color:#B9B9BA;font-size: 24px;font-family: 'Microsoft YaHei Regular';
+}
+.category-play-menu-list{
+    height: 100%;
+    float: left;
+    width:307px;
+}
+.focus{
+    border: 2px solid white;
+}

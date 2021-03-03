@@ -1,0 +1,125 @@
+#channel_mini_scene {
+    background: url("../../images/pages_ailive/shadow_bg1.png") repeat-x;
+    width: 1920px;
+    height: 593px;
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.miniCategoryLabel {
+    color: rgb(255, 255, 255);
+    font-family: "Microsoft YaHei Bold";
+    font-size: 36px;
+    margin-left: 8px;
+    width: 100%;
+    height:50px;
+}
+
+.channel-mini-window {
+    width: 284px;
+    height: 180px;
+    margin-left: 16px;
+    margin-top: 16px;
+    float: left;
+}
+
+div.channel-mini-schedule-bar {
+    height: 48px;
+    width: 284px;
+    box-sizing: border-box;
+    -webkit-border-sizing: border-box;
+    -moz-border-sizing: border-box;
+    background: url(../../images/pages_ailive/channel_mini_schedule_bar.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.channel-mini-schedule-bar .title {
+    width: 60%;
+    height: 100%;
+    line-height: 64px;
+    color: rgb(255, 255, 255);
+    font-size: 26px;
+    position: relative;
+    top: -69px;
+}
+
+.channel-mini-schedule-bar .pic {
+    width: 35px;
+    height: 35px;
+    float: right;
+    margin-top: 16px;
+    margin-right: 20px;
+    background: url(../../images/pages_ailive/right_arrow.png) no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    top:-70px;
+}
+
+.channel-mini-window div.program-pic-window {
+    width: 284px;
+    height: 160px;
+    color: white;
+    position: relative;
+    background-size: 100% 100%;
+}
+.program-pic-window .top {
+    height: 30%;
+    width: 100%;
+    position: absolute;
+    top:0;
+    z-index:4;
+}
+
+#channel_mini_scene_pic_windows_id {
+    height: 200px;
+    width: 1816px;
+    padding: 16px 0 0 55px;
+}
+
+.channel-mini-img-div {
+    width: 100%;
+    height: 50px;
+}
+.channel_mini_arrow_class{
+    width: 30px;
+    height: 18px;
+    margin-left: 25px;
+    float: left;
+}
+
+#bottom_channel_mini_label_id {
+    float: left;
+    color: rgb(255, 255, 255);
+    font-size: 36px;
+    font-family: 'Microsoft YaHei Bold';
+    margin-left: 70px;
+}
+
+.channel-mini-schedule-bar .unFocus{
+    height: 51px;
+}
+
+.picFocusDiv .shadow{
+     background: url("../../images/pages_ailive/mask_two_line_icon.png");
+     background-size: contain;
+ }
+/*不显示频道名称的时候：用一行的遮罩*/
+#channel_mini_scene.no_channel_name .picFocusDiv .shadow{
+    background: url("../../images/pages_ailive/mask_one_line_icon.png");
+}
+/*不显示频道名称的时候：节目名称下移,且常显*/
+#channel_mini_scene .no_channel_name .content .subhead{
+    margin-top: 33px;
+    visibility: visible;
+    color: rgba(255,255,255,1.0);
+    font-size: 34px;
+}
+#channel_mini_label_name_id{
+    font-size: 36px;
+    margin-left: 10px;
+    position: absolute;
+    top:110px;
+    left:78px;
+}

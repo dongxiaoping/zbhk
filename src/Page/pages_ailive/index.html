@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="page-view-size" content="1920*1080">
+    <title>OTT6.0电视精选</title>
+    <script src="./config.js" type="text/javascript"></script>
+</head>
+
+<body style="overflow: hidden;" class="clearfloat">
+    <!--BEGIN 播放 Loading组件-->
+    <div id="loading_component" style="display: none;">
+        <div class="loading"><div class="loader"></div></div>
+    </div>
+    <!--END 播放 Loading组件-->
+
+    <!--BEGIN 页面 Loading组件-->
+    <div id="page_loading_component" class="loading" style="display: none;">
+            <div id="page_loading_component_dot_id_0" class="loading_dot" style="display: none;"></div>
+            <div id="page_loading_component_dot_id_1" class="loading_dot" style="display: none;"></div>
+            <div id="page_loading_component_dot_id_2" class="loading_dot" style="display: none;"></div>
+            <div id="page_loading_component_dot_id_3" class="loading_dot" style="display: none;"></div>
+            <div id="page_loading_component_dot_id_4" class="loading_dot" style="display: none;"></div>
+            <div id="page_loading_component_dot_id_5" class="loading_dot" style="display: none;"></div>
+    </div>
+    <!--END 页面 Loading组件-->
+
+    <!--BEGIN Loading页面-->
+    <div id="loading_scene" style="display: none;"></div>
+    <!--END Loading页面-->
+
+    <!--BEGIN 全屏播放时的屏显-->
+    <div id="screen_scene" style="display: none;">
+        <div class='screen_info' id='screen_info'>
+            <div class='live_channel'>
+                <span class='channel_no' id='channel_no' style="font-size: 40px;">{{viewScreenData.channelNo}}</span>
+                <span class='channel_name' id="channel_name" style="font-size: 40px;">{{viewScreenData.channelName}}</span>
+            </div>
+            <div class="sch_info">
+                <p class='live_program' id="screen_scene_live_program_id" style="font-size: 36px;">{{viewScreenData.curName}}</p>
+                <div class='progress' id="live_progress">
+                    <div class='progress_left'></div>
+                    <div class='progress_mid' id="progress_mid"></div>
+                    <div class='progress_right' id="progress_right" style="display: none;"></div>
+                </div>
+                <div class='channel_time'><span class='start_time' id="screen_scene_live_time_start_id" style="font-size: 24px;">{{viewScreenData.startTime}}</span><span id="screen_scene_live_time_end_id" class='end_time' style="font-size: 24px;">{{viewScreenData.endTime}}</span></div>
+                <p class='next_program'>
+                    <span class="name_info" id="screen_scene_live_program_next_id" style="font-size: 30px;">{{viewScreenData.nextName}}</span>
+                </p>
+            </div>
+        </div>
+        <div class="entry_button pay_entry" id="pay_entry" style="display: none;">
+            <p class="pay_icon"></p>
+            <label class="tip">订购</label>
+        </div>
+        <div class="entry_button program_entry" id="program_entry" style="display: none;">
+            <p class="program_icon"></p>
+            <label class="tip">节目单</label>
+        </div>
+        <div class="entry_button collection_entry" id="collection_entry">
+            <img id="screen_scene_collection_img_id" class="collection_icon">
+            <label class="tip" id="screen_scene_collection_label_id">收藏</label>
+        </div>
+        <div class='rec_info'>
+            <div id="rec_info" class="clearfloat">
+                <div class='rec_item' id=rec_item_{{index}} repeat="item in recList">
+                    <p class='rec_score'>{{item.rating}}</p>
+                    <div class='content'>
+                        <p class='rec_name'>{{item.name}}</p>
+                    </div>
+                    <div class="rec_shadow">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--END 全屏播放时的屏显-->
+
+    <!--BEGIN 全屏播放页-->
+    <div id="player_scene"></div>
+    <!--END 全屏播放页-->
+
+    <!--BEGIN 直播频道节目单页面-->
+    <div id="channel_program_scene" style="display: none;">
+        <div id="scene_channel_list" class="scene_channel_list">
+            <!--<div class="channel_arrow left_arrow" id="channel_left_arrow"></div>-->
+            <div class='channel_item' id="scene_channel_item">
+                <div class='channel_info' id="channel_program_no">
+                    {{selectedChannel.ChannelNo}}&nbsp;&nbsp;{{selectedChannel.ChannelName}}
+                </div>
+            </div>
+            <!--<div class="channel_arrow right_arrow" id="channel_right_arrow"></div>-->
+        </div>
+        <div id="scene_date_list">
+            <div class='date_item' id=scene_date_item_{{index}} repeat="a in dateList">
+                <div class="date_bg">
+                    <div class="week_show" id="date_play_{{index}}" style="font-size:30px;">{{a.weekShow}}</div>
+                    <div class="date_show" id="date_show_{{index}}" style="display: none;font-size:30px;">{{a.dateShow}}</div>
+                </div>
+                <div class="select_border"></div>
+                <div class="item_arrow"></div>
+            </div>
+        </div>
+        <div id="scene_program_list">
+            <div class='program_time_line_item' repeat="a in programList">
+                <div class='start_time' id="start_time_{{index}}">{{a.startTimeFmt}}</div>
+                <div class="program_time">
+                    <div class="time_point"></div>
+                    <div class="time_line"></div>
+                </div>
+                <div class="program_progress" id="program_progress_{{index}}" style="display: none;">
+                    <div class="progress_bg">
+                        <div class="mid"></div>
+                        <div class="right"></div>
+                    </div>
+                    <div class="progress">
+                        <div class='left'></div>
+                        <div class='mid' id="progress_mid_{{index}}"></div>
+                    </div>
+                </div>
+            </div>
+            <div class='program_content' repeat="a in programList" id=scene_program_item_{{index}}>
+                <div class="unFocus min_tab_height_set"></div>
+                <div class='content'>
+                    <p class="program_tips" id="program_tips_{{index}}" style="display:none;">即将播放</p>
+                    <p class='program_name' id="program_name_{{index}}">{{a.Name}}</p>
+                </div>
+                <div class="shadow">&nbsp;</div>
+            </div>
+        </div>
+    </div>
+    <!--END 直播频道节目单页面
+
+    <!--BEGIN 直播时移页面-->
+    <div id="live_seek_scene" style="display: none;">
+        <div class="live_seek_info" id="live_seek_info">
+            <div class="live_seek_icon" id="live_seek_icon">
+                <div class="live_icon"></div>
+                <div class="tips">时移</div>
+            </div>
+            <div class="live_seek">
+                <div class="live_seek_show">
+                    <div class='live_channel'>
+                        <span class='channel_no' id="seek_channel_no">{{viewChannelSeekData.channelNo}}</span>
+                        <span class='channel_name'>{{viewChannelSeekData.channelName}}</span>
+                        <span class='live_program'>{{viewChannelSeekData.curName}}</span>
+                    </div>
+                    <div class='channel_time'>
+                        <p id="live_show_icon" class="icon"/>
+                        <p class='cur_play_time' id="cur_play_time">{{viewChannelSeekData.curPlayTime}}</p>
+                        <p>&nbsp;/&nbsp;</p>
+                        <p class='end_time' id="now_time">{{viewChannelSeekData.nowTime}}</p>
+                    </div>
+                    <div class='progress'>
+                        <div class='progress_mid' id="live_progress_mid"></div>
+                        <div class='progress_cur_point' id="live_progress_cur_point"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--END 直播时移页面-->
+
+    <!--BEGIN 精选-回看播控页面-->
+    <div id="seek_scene" style="display: none;">
+        <div class="seek_icon">
+            <div class="icon"></div>
+            <div class="tips" id="seek_tips">回看</div>
+        </div>
+        <div class="seek_bottom_show">
+            <div class="seek_info" id="seek_info">
+                <div>
+                    <span class="cate_name" id="seek_cate_name">{{viewSeekData.curCate}}</span>
+                    <span class="program_name" id="seek_program_name">{{viewSeekData.programName}}</span>
+                </div>
+                <div class='program_time'>
+                    <p id="show_icon" class="icon"/>
+                    <p class='start_time' id="play_time">{{viewSeekData.startTime}}</p>
+                    <p>&nbsp;/&nbsp;</p>
+                    <p class='end_time' id="play_end_time">{{viewSeekData.endTime}}</p>
+                </div>
+                <div class='progress'>
+                    <div class='progress_mid' id="seek_progress_mid"></div>
+                    <div class='progress_cur_point' id="progress_cur_point"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--END 精选-回看播控页面-->
+
+    <!--BEGIN 精选剧集列表页面-->
+    <div id="jx_series_scene" style="display: none;">
+        <div class="program_info" id="category_program_show">
+            <div class="subscribe_show" id="subscribe_show">
+                <label class="subscribe_tip" id="jx_series_sub_tip">追剧</label>
+                <div class="subscribed_icon" id="jx_series_sub_icon"></div>
+            </div>
+            <div class="series_name">{{categoryProgramInfo.categoryName}} : {{categoryProgramInfo.programName}}</div>
+        </div>
+        <div class="left_icon" id="jx_left_icon"></div>
+        <div class="series_list" id="jx_series_list">
+            <div repeat="a in seriesList" class="series_item">
+                <div class='series_content' id=jx_series_item_{{index}}>
+                    <p class='series_name' id=jx_series_name_{{index}}>{{a.fullName}}</p>
+                    <div class="jx_shadow">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+        <div class="right_icon" id="jx_right_icon"></div>
+    </div>
+    <!--END 精选剧集列表页面-->
+
+    <!--BEGIN 回看节目列表页面-->
+    <div id="sch_program_scene" style="display: none;">
+        <div class="sch_seek">
+            <div class="date_show" id="sch_date_show">
+                <span>{{dateShow.week}}&nbsp;&nbsp;{{dateShow.date}}</span>
+            </div>
+            <div class="arrow_icon left_icon" id="sch_left_icon"></div>
+            <div class="program_info" id="sch_program_list">
+                <div repeat="a in programList" class="program_item">
+                    <div class='program_content' id=sch_program_item_{{index}}>
+                        <div class="program_tips" id="sch_program_tips_{{index}}" style="display:none;">即将播放</div>
+                        <p class='program_time' id="sch_program_time_{{index}}">{{a.time}}</p>
+                        <p class='program_name' id="sch_program_name_{{index}}">{{a.Name}}</p>
+                        <div class="shadow">&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+            <div class="arrow_icon right_icon" id="sch_right_icon"></div>
+        </div>
+    </div>
+    <!--END 回看节目列表页面-->
+
+    <!--BEGIN 频道迷你菜单-->
+    <div id="channel_mini_scene" style="display:none;">
+        <div class="miniCategoryLabel" style="margin-top: 200px;">
+            <!--BEGIN 分类列表-->
+            <div id="channel_mini_category_list_id" class="channel_mini_category_list">
+                <div class="channel_mini_category_item_div" id="channel_mini_category_id_{{index}}"  repeat="item in showCategoryList">
+                    <label class="channel_mini_category_list_label">{{item.Name}}</label>
+                </div>
+            </div>
+            <!--BEGIN 分类列表-->
+        </div>
+
+        <div id="channel_mini_scene_pic_windows_id" class="clearfloat" style="margin-top: 20px;">
+            <div class='channel-mini-window' id="channel-mini-window_{{index}}" style="margin-top: 4px;" repeat="channel in channelList">
+                <div id="channel_mini_scene_pic_windows_id_{{index}}" class='program-pic-window' style="">
+                    <div class="unFocus min_tab_height_set"></div>
+                    <div class='top'>
+                        <h1 id="channel_mini_scene_num_{{index}}" class='top_number'>{{channel.ChannelNo}}</h1>
+                        <p id=channel_mini_windows_id_del_img_{{index}} class="channel_mini_collection_del" style="display: none;">
+                    </div>
+                    <div class='content'>
+                        <p id="channel_mini_scene_program_name_{{index}}" class='subhead'>{{channel.PlayProgramName}}</p>
+                        <p id="channel_mini_scene_channel_name_{{index}}"  class='main'>{{channel.ChannelName}}</p>
+                    </div>
+                    <div class="shadow">&nbsp;</div>
+                </div>
+                <div id=channel_mini_scene_pic_windows_id_bar_{{index}} style='display: none;' class='channel-mini-schedule-bar'>
+                    <div class="unFocus" style="border:0px solid white;height: 59px;"></div>
+                    <label style='color: rgb(255,255,255);margin-left: 29px;font-size: 26px;' class='title'>节目单</label>
+                    <div class='pic'>&nbsp;</div>
+                </div>
+            </div>
+        </div>
+        <div class="miniCategoryLabel" style="margin-top: 57px;">
+            <div class="channel-mini-img-div" style="width: 60px;margin-left: 60px;">
+                <img class="channel_mini_arrow_class" id="channel_mini_down_arrow_id" style="margin-top: -30px;">
+            </div>
+        </div>
+
+        <p id="mini_collection_edit_function_tip_id" style="display: none;">可对选中收藏长按OK键进行编辑</p>
+    </div>
+
+
+    <div id="live_collection_div_id" class="live_collection_div_class" style="display: none;">
+        <div id="live_save_clean_div_id" class="unFocus" style="height: 100%;width: 180px;float:left;">
+            <img id="live_save_clean_icon_id" class="jx_sub_img" style="margin-left: 30px;">
+            <div id="live_save_clean_label_id" class="jx_sub_label_par_div" style="">
+                <label class="jx_sub_label">清空</label>
+            </div>
+        </div>
+
+        <div id="live_save_finish_div_id" class="unFocus" style="height: 100%;width: 180px;float:left;margin-left: 6px;">
+            <img id="live_save_finish_icon_id" class="jx_sub_img" style="margin-left: 20px;">
+            <div id="live_save_finish_label_id" class="jx_sub_label_par_div" style="">
+                <label class="jx_sub_label">完成</label>
+            </div>
+        </div>
+    </div>
+    <!--END 频道迷你菜单-->
+
+    <!--BEGIN 精选分类页面-->
+    <div id="jx_no_recommend_scene" style="display:none;overflow: hidden;background: rgba(0,0,0,0.8)">
+        <!--页面顶部留边-->
+        <div id="no_recommend_top_channel_mini_scene_pic_windows_id">
+            <div class='channel-mini-window' repeat="channel in channelList">
+                <div id=no_recommend_top_channel_mini_scene_pic_windows_id_{{index}} class='program-pic-window' style="">
+                    <div class="picFocusDiv unFocus"></div>
+                    <div class='top'>
+                        <h1 class='number'>{{channel.ChannelNo}}</h1>
+                    </div>
+                    <div class='content' style="top:50px;">
+                        <p class='main'>{{channel.ChannelName}}</p>
+                        <p class='subhead'>{{channel.PlayProgramName}}</p>
+                    </div>
+                    <div class="shadow">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+        <!--页面顶部留边-->
+
+        <!--BEGIN 追剧列表-->
+        <div id="no_recommend_jx_sub_operate_div_id" class="jx_sub_operate_div">
+            <p class="jx_sub_operate_category_name">追剧</p>
+            <div class="schedule_category_name_sub" style="width: 100%;">
+                <p id="no_recommend_jx_sub_edit_function_tip_id" class="edit_function_tip">可对选中追剧长按OK键进行编辑</p>
+            </div>
+
+            <!--BEGIN 追剧编辑-->
+            <div id="no_recommend_jx_sub_edit_div_id" class="live_collection_div_class" style="top:105px;">
+                <div class="jx_category_edit_div_class unFocus" id="no_recommend_jx_category_edit_div_id">
+                    <img id="no_recommend_jx_category_edit_icon_id" class="jx_sub_img" style="margin-left: 30px;">
+                    <div id="no_recommend_jx_category_edit_label_id" class="jx_sub_label_par_div">
+                        <label class="jx_sub_label">编辑</label>
+                    </div>
+                </div>
+
+                <div id="no_recommend_jx_category_clean_div_id" class="unFocus" style="height: 100%;width: 180px;float:left;">
+                    <img id="no_recommend_jx_category_clean_icon_id" class="jx_sub_img" style="margin-left: 30px;">
+                    <div id="no_recommend_jx_category_clean_label_id" class="jx_sub_label_par_div" style="">
+                        <label class="jx_sub_label">清空</label>
+                    </div>
+                </div>
+
+                <div id="no_recommend_jx_category_finish_div_id" class="unFocus" style="height: 100%;width: 180px;float:left;margin-left: 6px;">
+                    <img id="no_recommend_jx_category_finish_icon_id" class="jx_sub_img" style="margin-left: 20px;">
+                    <div id="no_recommend_jx_category_finish_label_id" class="jx_sub_label_par_div" style="">
+                        <label class="jx_sub_label">完成</label>
+                    </div>
+                </div>
+            </div>
+            <!--END 追剧编辑-->
+
+        </div>
+        <div id="no_recommend_schedule_category_sub_list_id" style="position: absolute;top:190px;left: 50px;">
+            <div class='channel-mini-window' repeat="item in showSubProgramList" style="height: 160px;">
+                <div id=no_recommend_schedule_category_sub_windows_id_{{index}} class='old-program-pic-window'>
+                    <div class="unFocus"></div>
+                    <div class='top'>
+                        <p id=no_recommend_schedule_category_sub_windows_id_del_img_{{index}} class="channel_mini_collection_del">
+                    </div>
+                    <div class='content'>
+                        <p class='subhead'>更新至{{item.newSeries}}</p>
+                        <p class='main'>{{item.keyname}}</p>
+                    </div>
+                    <div class="shadow">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+        <!--END 追剧列表-->
+
+        <!--BEGIN 分类列表-->
+        <div id="no_recommend_schedule_category_double_list_id" style="position: absolute; width: 100%;height: auto;top:270px;left: 50px;">
+            <div style="width: 100%;height: 280px;" repeat="item in initPageDataList">
+                <p class="schedule_category_name_p">{{item.name}}</p>
+                <div class='program-mini-window' repeat="item in item.schedule">
+                    <div id=no_recommend_schedule_category_windows_id_{{index}} class="old-program-pic-window">
+                        <div class="unFocus"></div>
+                        <div class='top'>
+                            <h1 class='number'>{{item.name}}</h1>
+                        </div>
+                        <div class='content'>
+                            <p class='subhead' id=no_recommend_schedule_category_windows_id_{{index}}_series></p>
+                            <p class='main' id=no_recommend_schedule_category_windows_id_{{index}}_name>{{item.name}}</p>
+                        </div>
+                        <div class="shadow">&nbsp;</div>
+                    </div>
+                </div>
+
+                <div class='channel-mini-window' repeat="item in item.recommend" style="height: 387px;width: 284px;margin-top: 25px;">
+                    <div id=no_recommend_schedule_category_recommend_id_{{index}} class='recommend-pic-window'>
+                        <div class="unFocus" style="height: 375px;"></div>
+                        <p id=no_recommend_schedule_category_recommend_id_{{index}}_score class='recommend-score' style="font-size: 32px;">{{item.rating}}</p>
+                        <div class='content'>
+                            <p class='subhead' id=no_recommend_schedule_category_recommend_id_{{index}}_series>{{item.updateEpisodeNum}}</p>
+                            <p id=no_recommend_schedule_category_recommend_id_{{index}}_name class='main'>{{item.name}}</p>
+                        </div>
+                        <div class="recommend-shadow">&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--END 分类列表-->
+        <p id="version_num_id">版本号：</p>
+    </div>
+    <!--END 精选分类页面-->
+
+    <!--BEGIN 退出页面-->
+    <div id="exit_scene" style="display:none;">
+        <div style="position: absolute;width: 100%;bottom: 80px;">
+            <!--BEGIN 退出按钮-->
+            <div id="exit_button_div_id" class="exit-button">
+                <img id="exit_button_id" style="opacity:0.4;">
+                <label class="exit-label" style="">退出</label>
+            </div>
+            <!--END 退出按钮-->
+            <!--BEGIN 功能菜单-->
+            <div id="exit_menu_div_id" class="exit-menu">
+                <div id="order_button_div_id" class="exit_menu_function" style="display: none;">
+                    <img id="exit_menu_order_id" class="exit_scene_recommend_menu_img" style="opacity:0.4;">
+                    <label class="exit-label" id="exit_menu_label_order_id">订购</label>
+                </div>
+                <div id="exit_menu_live_id" class="exit_menu_function" style="display: none;">
+                    <img id="exit_menu_live_img_id" class="exit_scene_recommend_menu_img" style="opacity:0.4;">
+                    <label class="exit-label" id="exit_menu_label_id"></label>
+                </div>
+                <div id="exit_menu_function_id" class="exit_menu_function">
+                    <img id="exit_scene_recommend_menu_img_id" class="exit_scene_recommend_menu_img" style="opacity:0.4;">
+                    <label class="exit-label" id="exit_scene_recommend_menu_label_id"></label>
+                </div>
+                <img id="exit_scene_menu_arrow_id">
+            </div>
+            <!--END 功能菜单-->
+
+            <!--BEGIN 推荐列表-->
+            <div  class="rec_info">
+                <div id="exit_menu_recommend_id" class="clearfloat">
+                    <div class='rec_item' id=exit_recommend_id_{{index}} repeat="item in recommendList">
+                        <p class='rec_score'>{{item.rating}}</p>
+                        <div class='content'>
+                            <p class='rec_name'>{{item.name}}</p>
+                        </div>
+                        <div class="rec_shadow">&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+            <!--END 推荐列表-->
+        </div>
+    </div>
+    <!--END 退出页面-->
+
+    <!--BEGIN 错误页面-->
+    <div id="error_scene" style="display: none;">
+        <div id="error_scene_tip_id">
+            <table style="background-color: #162638">
+                <tr>
+                    <td style="font-size: 44px;height: 100px;">{{tipInfo.error_title}}</td>
+                </tr>
+                <tr>
+                    <td style="font-size: 30px;height: 50px;">{{tipInfo.error_code}}</td>
+                </tr>
+                <tr>
+                    <td style="font-size: 30px;height: 50px;">{{tipInfo.error_explain}}</td>
+                </tr>
+                <tr>
+                    <td style="font-size: 30px;height: 30px;">&nbsp;</td>
+                </tr>
+            </table>
+            <table style="height: 82px;margin-top: 18px;">
+                <tr>
+                    <td id="error_scene_location_id_0_0" class="newUnFocus" colspan="25" style="line-height: 100%;background-color: #162638;font-size: 36px;"><img id="error_refresh_img_id">&nbsp;重试</td>
+                    <td colspan="1">&nbsp;</td>
+                    <td id="error_scene_location_id_0_1" class="newUnFocus" colspan="25" style="background-color: #0093DF;font-size: 36px;"><img id="error_exit_img_id">&nbsp;退出</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!--END 错误页面-->
+
+    <!--BEGIN 频道或节目不存在时的提示-->
+    <div id="channel-program-not-exit-tip" style="display: none;">
+        <div>
+            <span id="play-tip-img" class="tip_img" style="display: none;"></span>
+            <span id="play-tip-info" class="tip_info"></span>
+        </div>
+    </div>
+    <!--END 频道或节目不存在时的提示
+
+    <!--BEGIN 数字键切台的频道号-->
+    <div id="channel-number-id" class="channel-number-style" style="display: none;"></div>
+    <!--END 数字键切台的频道号-->
+
+    <!--BEGIN 直播操作提示-->
+    <div id="key-op-tip-for-live-id" class="keyOpTip" style="display: none;">
+        <div style="width: 100%;height: 50%;text-align: center;">
+            <p id="key-op-tip-for-live-name-id"  style="font-size: 42px;font-weight: bold;font-family: 'Microsoft YaHei Bold';"></p>
+        </div>
+        <div class="keyOpTipOpDiv">
+            <img id="key-op-tip-for-live-ok" style="margin-top: 15px;margin-left: 277px;float:left;">
+            <p style="width: 320px;float: left;margin-top:20px;margin-left: 16px;opacity: 0.7;">查看所有最新节目</p>
+            <img id="key-op-tip-for-live-up-down" style="margin-top: 15px;margin-left: 106px;float:left;">
+            <p style="width: 280px;float: left;margin-top:20px;margin-left: 16px;opacity: 0.7; ">上下键选频道</p>
+            <img id="key-op-tip-for-live-right" style="margin-top: 15px;margin-left: 146px;float:left;">
+            <p style="width: 350px;float: left;margin-top:20px;margin-left: 16px;opacity: 0.7; ">右键查看节目单</p>
+        </div>
+    </div>
+    <!--END 直播操作提示-->
+
+    <!--BEGIN 回看操作提示-->
+    <div id="key-op-tip-for-look-back-id" class="keyOpTip" style="display: none;">
+        <div style="width: 100%;height: 50%;text-align: center;">
+            <p id="key-op-tip-for-look-back-name-id" style="font-size: 42px;font-weight: bold;font-family: 'Microsoft YaHei Bold';"></p>
+        </div>
+        <div class="keyOpTipOpDiv">
+            <img id="key-op-tip-for-look-back-play" style="margin-top: 15px;margin-left: 277px;float:left;">
+            <p style="width: 320px;float: left;margin-top:20px;margin-left: 16px;opacity: 0.7;">暂停/播放</p>
+            <img id="key-op-tip-for-look-back-up-down" style="margin-top: 15px;margin-left: 146px;float:left;">
+            <p style="width: 350px;float: left;margin-top:20px;margin-left: 16px;opacity: 0.7; ">上下键选节目</p>
+            <img id="key-op-tip-for-look-back-left-right" style="margin-top: 15px;margin-left: 106px;float:left;">
+            <p style="width: 280px;float: left;margin-top:20px;margin-left: 16px;opacity: 0.7; ">左右键快进快退</p>
+        </div>
+    </div>
+    <!--END 回看操作提示-->
+
+    <!--BEGIN 直播频道付费提示（图片+文字）-->
+    <div id="channel-pay-tips" style="display: none;">
+        <div id="channel-pay-tips-image">
+            <div class="tips-image"></div>
+        </div>
+        <div id="channel-pay-tips-info">
+            节目为付费内容，您暂未订购，OK键订购后可观看完整内容
+        </div>
+    </div>
+    <!--END 直播频道付费提示图片-->
+</body>
+</html>

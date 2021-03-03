@@ -1,0 +1,81 @@
+#exit_scene {
+    position: absolute;
+    width: 1280px;
+    height: 720px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#exit_scene .button{
+    position: absolute;
+    top: 548px;
+}
+#exit_scene .button .operation_button{
+    height: 62px;
+    width: 181px;
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -595px -142px;
+    padding: 3px 3px 3px 3px;
+    float: left;
+    margin-right: 10px;
+}
+
+#exit_scene .button .operation_button p{
+    height: 54px;
+    width: 131px;
+    margin: 7px 0 0 16px;
+}
+#exit_scene .button .operation_button .exit_button{
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -729px -212px;
+}
+#exit_scene .button .operation_button .collect_button {
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -595px -268px;
+}
+#exit_scene .button .operation_button .collected_button {
+    background-image: url(../../images/pages_zbhk/sprite.png);
+    background-position: -595px -212px;
+}
+#exit_scene .button .operation_button.focus{
+    background-image: url(../../images/pages_zbhk/exit_btn_select.png);
+    border: 3px solid white;
+    padding: 0px;
+}
+
+#exit_scene .sch_rec_list{
+    position: absolute;
+    left: 100px;
+    top: 412px;
+    width: 100%;
+    overflow: hidden;
+}
+#exit_scene .sch_rec_list .rec_tag{
+    float: left;
+    width: 352px;
+    margin-right: 5px;
+}
+#exit_scene .sch_rec_list .rec_tag .tips{
+    font-family: "Microsoft YaHei Regular";
+    font-size: 20px;
+    color: #FFFFFF;
+    height: 20px;
+    line-height: 20px;
+    margin-bottom: 17px;
+}
+
+#exit_scene .sch_rec_list .rec_tag .name{
+    font-family: "Microsoft YaHei Regular";
+    font-size: 24px;
+    color: #FFFEFE;
+    height: 68px;
+    line-height: 68px;
+    background-image: url(../../images/pages_zbhk/exit_program_bg.png?__sprite);
+    background-size: 352px 72px;
+    padding: 2px 2px 2px 47px;
+}
+#exit_scene .sch_rec_list .rec_tag .focus{
+    background-color: #0093DF;
+    background-image: none;
+    border: 2px solid white;
+    padding: 0px 0px 0px 45px;
+}
