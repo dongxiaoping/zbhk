@@ -13,17 +13,13 @@ const common = require('./webpack.common.js');
 module.exports = merge(common, {
     devtool: 'inline-source-map',//开发时调用
     module: {
-        rules: [
-            { //对ES6进行转码
-                test: /\.js$/,
-                exclude: /\prototype.js$/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['env']
-                    }
-                }
+        rules: [ {
+            test: /\.jsx?$/,
+            exclude: /node_modules/,
+            loader: 'babel-loader',
+            query: {
+                presets: ['es2015', 'react','stage-0']
             }
-        ]
+        }]
     }
 });

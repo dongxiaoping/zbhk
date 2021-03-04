@@ -1,0 +1,169 @@
+.mst-channel-item {
+    width: 1050px;
+    height: 120px;
+    margin-top: 20px;
+    overflow: hidden;
+    font-size: 24px;
+    line-height: 120px;
+    position: relative;
+  }
+  
+  .mst-channel-item img {
+    border: 0;
+  }
+  
+  .mst-channel-item .vip-label {
+    position: absolute;
+    z-index: 6;
+  }
+  
+  .mst-channel-item .playing-label {
+    position: absolute;
+    z-index: 7;
+    top: 40px;
+    left: 15px;
+  }
+  
+  .mst-channel-item .label {
+    position: absolute;
+    height: 100%;
+    z-index: 5;
+  }
+  
+  .mst-channel-item .number-label {
+    font-size: 42px;
+    width: 80px;
+    left: 70px;
+  }
+  
+  .mst-channel-item .number-label .number {
+    opacity: 0.4;
+    line-height: 45px;
+  }
+  
+  .mst-channel-item .channel-label {
+    font-size: 38px;
+    width: 190px;
+    left: 170px;
+    overflow: hidden;
+  }
+  
+  .mst-channel-item .channel-label .channel {
+    font-size: 38px;
+    opacity: 0.7;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    line-height: 45px;
+  }
+  
+  .mst-channel-item .program-label {
+    font-size: 30px;
+    width: 450px;
+    left: 370px;
+    line-height: 60px;
+    overflow: hidden;
+  }
+  
+  .mst-channel-item .program-label .program {
+    opacity: 0.7;
+    width: 100%;
+  }
+  
+  .mst-channel-item .more-label {
+    background: #ffffff;
+    border-radius: 35px;
+    width: 138px;
+    height: 70px;
+    position: absolute;
+    left: 846px;
+    top: 25px;
+    opacity: 0.8;
+    z-index: 1000;
+  }
+  
+  .mst-channel-item .more-label img {
+    float: right;
+    margin-right: 10px;
+    margin-top: 16px;
+  }
+  
+  .mst-channel-item .more-label p {
+    font-family: SourceHanSansCN-Medium;
+    font-size: 30px;
+    height: 100%;
+    color: #ef8001;
+    text-align: right;
+    margin-top: 20px;
+    float: right;
+    line-height: 100%;
+  }
+  
+  .mst-channel-item .focus-div {
+    position: absolute;
+    width: 826px;
+    height: 100%;
+    z-index: 4;
+    top: 0px;
+    background: url(http://www.toplaygame.cn/img/menu_focus_channel.png);
+    opacity: 0.8;
+    background-size: 100% 100%;
+  }
+  
+  .mst-channel-item .channel-label .channel-loop,
+  .mst-channel-item .program-label .program-loop {
+    width: auto;
+    white-space: nowrap;
+    display: inline-block;
+  }
+  
+  .mst-channel-item.focus .number-label .number,
+  .mst-channel-item.focus .channel-label .channel,
+  .mst-channel-item.focus .program-label .program,
+  .mst-channel-item.focus .channel-label .channel-loop,
+  .mst-channel-item.focus .program-label .program-loop,
+  .mst-channel-item.playing .number-label .number,
+  .mst-channel-item.playing .channel-label .channel,
+  .mst-channel-item.playing .program-label .program {
+    opacity: 1;
+  }
+
+  .mst-channel-list {
+    margin-left: 5px;
+    position: absolute;
+    height: 980px;
+    width: 1050px;
+    font-family: SourceHanSansCN-Medium;
+    color: #FFFFFF;
+    top: 35px;
+  }
+
+  .mst-channel-list-view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1080px;
+    width: 1050px;
+    background: url(http://www.toplaygame.cn/img/mask.png) 0 0 no-repeat;
+    background-size: 800px 1920px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    z-index: 999;
+  }
+  
+  .mst-channel-list-view .review-arrow {
+    position: absolute;
+    left: 250px;
+  }
+  
+  .mst-channel-list-view .review-arrow.down {
+    top: 1018px;
+  }
+  
+  .mst-channel-list-view .review-arrow.up {
+    top: 35px;
+  }
+  
+  .mst-channel-list-view .js-version {
+    color: #ef8001;
+  }

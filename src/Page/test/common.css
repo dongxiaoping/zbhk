@@ -143,3 +143,15 @@
 .focus{
     border: 2px solid white;
 }
+
+body {
+    margin: 0 auto;
+    position: absolute;
+    height: 1080px;
+    width: 1920px;
+    -webkit-transform: scale(0.667);
+    transform: scale(0.667);
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+    overflow: hidden;
+}

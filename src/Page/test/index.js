@@ -1,30 +1,28 @@
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
 import './common.css';
-import {ElementSate} from "./util.js"
-import {LiveCoverPage} from "./page/cover"
-import {LiveCategoryPage} from "./page/liveCategory"
+import { ElementSate, logInit, EventType } from "./util.js"
+import { eventBus } from "../../lib/EventBus"
+import { CoverPage, MstChannelPage } from "./page/mstChannelPage"
+import { ChannelItem, MstChannelList } from "./component/component"
+import './mstChannelItem.css'
 
-const channelCategoryList = [{ categoryCode: 1, name: "卫视", elementState:  ElementSate.normal}, { categoryCode: 2, name: "央视",  elementState:  ElementSate.focus }]
-const channelList = [{ channelCode: 1, name: "中央一台" }, { channelCode: 2, name: "央视二胎" }]
+import log from 'loglevel';
 
-
-
-
-
+logInit()
 
 
-//console.log(listItems)
-//const catergoryItem = <CatergoryItem categoryName="Sara" />;
+window.document.onkeydown = function (e) {
+    eventBus.emit(EventType.REMOTE_EVENT, e.keyCode)
+};
 
-ReactDom.render(
-    // <CatergoryList channelCategoryList={channelCategoryList}></CatergoryList>,
-    // <ChannelItem channelName="頻道一"></ChannelItem>,
-    // <CoverChannelList channelList={channelList}></CoverChannelList>,
-   // <LiveCoverPage  channelList={channelList} channelCategoryList={channelCategoryList}></LiveCoverPage>,
-    <LiveCategoryPage channelList={channelList} channelCategoryList={channelCategoryList}></LiveCategoryPage>,
-    // <AAA></AAA>,
-    document.getElementById('root')
-);
+window.document.onkeyup = function (e) {
+    //console.log(e)
+};
+
+//let coverPage = new CoverPage()
+//coverPage.show()
 
 
+ let mstChannelPage = new MstChannelPage()
+ mstChannelPage.show()
